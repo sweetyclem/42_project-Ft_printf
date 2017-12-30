@@ -16,6 +16,8 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdbool.h>
+# define MAX(N, M) ((N > M) ? N : M)
+# define MIN(N, M) ((N < M) ? N : M)
 
 char			**ft_strsplit(const char *s, char c);
 char			*ft_itoa(int n);
@@ -89,5 +91,9 @@ void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *n);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+size_t			ft_longlong_len(long long int nbr);
+void			ft_putlonglong(long long int nbr);
+void			ft_putnstr(const char *str, size_t n);
 
 #endif

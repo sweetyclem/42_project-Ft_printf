@@ -15,7 +15,7 @@ NAME	=  libftprintf.a
 CC		= gcc
 FLAGS	= -Wall -Werror -Wextra
 INCLUDES = printf.h
-SRC	= ft_printf.c
+SRC	= ft_printf.c print.c parse_args.c
 LIBFT = ./libft
 
 OBJ = $(SRC:.c=.o)
@@ -51,9 +51,13 @@ $(NAME): $(OBJ)
 
 clean:
 	@$(RM) -f $(OBJ)
+	@make clean -C $(LIBFT)
+	@echo "clean printf: $(_CYAN)done$(_END)"
 
 fclean: clean
 	@$(RM) -f $(NAME)
+	@make fclean -C $(LIBFT)
+	@echo "fclean printf: $(_CYAN)done$(_END)"
 
 re: fclean all
 

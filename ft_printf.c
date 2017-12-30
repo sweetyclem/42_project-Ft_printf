@@ -12,32 +12,6 @@
 
 #include "printf.h"
 
-size_t	parse_format(va_list *va, const char *format)
-{
-	size_t	char_written;
-	int		i;
-	char	*str;
-
-	char_written = 0;
-	i = 0;
-	str = (char *)format;
-	while (str[i] != '\0')
-	{
-		if (str[i] == '%')
-		{
-			ft_putstr(ft_strsub(str, 0, (i + 1)));
-			char_written += parse_args(va, &str);
-			
-		}
-		else
-		{
-			char_written++;
-			i++;
-		}
-	}
-	return (char_written);
-}
-
 int		ft_printf(const char *format, ...)
 {
 	size_t	char_written;
@@ -50,5 +24,33 @@ int		ft_printf(const char *format, ...)
 		char_written = parse_format(&va, format);
 		va_end(va);
 	}
+	return (char_written);
+}
+
+size_t	parse_format(va_list *va, const char *format)
+{
+	size_t	char_written;
+	char	*str;
+	char	*start;
+
+	char_written = 0;
+	str = (char *)format;
+	start = (char *)format;
+	while (*str != '\0')
+	{
+		if (*str == '%')
+		{
+			// Write everything that was before the %
+			ft_putnstr(start, str - start);
+			char_written += parse_args(va, &str);
+			start = str;
+		}
+		else if (*str != '\0')
+		{
+			char_written++;
+			str++;
+		}
+	}
+	ft_putnstr(start, str - start);
 	return (char_written);
 }

@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_putnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/18 13:24:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/12/20 11:51:51 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/08 07:23:25 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/12/30 11:31:02 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include "libft/libft.h"
+#include "libft.h"
 
-int ft_printf(const char *format, ...);
-size_t	parse_args(va_list *va, char **str);
-size_t	parse_format(va_list *va, const char *format);
-char	*get_args(va_list *va, char *str);
-int print_numbers(va_list *va);
+void	ft_putnstr(const char *str, size_t n)
+{
+	size_t		len;
+
+	if (str != NULL)
+	{
+		len = ft_strlen(str);
+		write (1, str, MIN(len, n));
+	}
+}

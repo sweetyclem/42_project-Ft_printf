@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_long_len.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/18 13:24:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/12/20 11:51:51 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/08 07:23:25 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/12/30 11:31:02 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include "libft/libft.h"
+#include "libft.h"
 
-int ft_printf(const char *format, ...);
-size_t	parse_args(va_list *va, char **str);
-size_t	parse_format(va_list *va, const char *format);
-char	*get_args(va_list *va, char *str);
-int print_numbers(va_list *va);
+size_t		ft_longlong_len(long long int nbr)
+{
+	size_t		len;
+
+	len = 1;
+	while (nbr > 9 || nbr < -9)
+	{
+		nbr /= 10;
+		len++;
+	}
+	if (nbr < 0)
+		len++;
+	return (len);
+}
