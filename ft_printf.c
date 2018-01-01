@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:19:13 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/12/20 15:49:50 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/01 11:25:12 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,26 +31,20 @@ size_t	parse_format(va_list *va, const char *format)
 {
 	size_t	char_written;
 	char	*str;
-	char	*start;
 
 	char_written = 0;
 	str = (char *)format;
-	start = (char *)format;
 	while (*str != '\0')
 	{
 		if (*str == '%')
-		{
-			// Write everything that was before the %
-			ft_putnstr(start, str - start);
 			char_written += parse_args(va, &str);
-			start = str;
-		}
-		else if (*str != '\0')
+		else
 		{
-			char_written++;
-			str++;
+			ft_putchar(*str);
+			char_written++;	
 		}
+		if (*str != '\0')
+			str++;
 	}
-	ft_putnstr(start, str - start);
 	return (char_written);
 }

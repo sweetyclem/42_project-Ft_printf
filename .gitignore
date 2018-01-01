@@ -2,3 +2,4 @@ a.out
 printf.h.gch
 *.a
 *.o
+compil.sh
