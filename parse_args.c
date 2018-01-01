@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/20 11:50:13 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/01 11:25:23 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/01 11:31:12 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ char	*get_args(va_list *va, char *str)
 	{
 		print_numbers(va);
 	}
-	return (&str[i + 1]);
+	return (&str[i]);
 }
