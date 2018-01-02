@@ -5,9 +5,9 @@
 int main(void)
 {
 	ft_putendl("mienne : ");
-	ft_printf("%s\n", "abc");
+	ft_printf("%%\n");
 	ft_putendl("vraie printf : ");
-	printf("%s\n", "abc");
+	printf("%%\n");
 
 	ft_putendl("\n\nmienne : ");
 	ft_printf("111%s333\n", "222");
