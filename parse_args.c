@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/20 11:50:13 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/02 14:56:57 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/02 16:20:07 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,10 @@ int	get_args(va_list *va, char **str, int i)
 	if ((*str)[i] == 'd' || (*str)[i] == 'i')
 	{
 		char_written = print_numbers(va);
+	}
+	else if ((*str)[i] == 's')
+	{
+		char_written = print_string(va);
 	}
 	*str = &(*str)[i];
 	return (char_written);

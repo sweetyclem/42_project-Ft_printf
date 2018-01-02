@@ -5,42 +5,32 @@
 int main(void)
 {
 	ft_putendl("mienne : ");
-	ft_printf("before %d after", 42);
-	ft_putendl("\nvraie printf : ");
-	printf("before %d after", 42);
+	ft_printf("%s\n", "abc");
+	ft_putendl("vraie printf : ");
+	printf("%s\n", "abc");
 
 	ft_putendl("\n\nmienne : ");
-	ft_printf("%d", 42);
-	ft_putendl("\nvraie printf : ");
-	printf("%d", 42);
+	ft_printf("111%s333\n", "222");
+	ft_putendl("vraie printf : ");
+	printf("111%s333\n", "222");
 
 	ft_putendl("\n\nmienne : ");
-	ft_printf("%d", -42);
-	ft_putendl("\nvraie printf : ");
-	printf("%d", -42);
+	ft_printf("%s333\n", "222");
+	ft_putendl("vraie printf : ");
+	printf("%s333\n", "222");
 	
 	ft_putendl("\n\nmienne : ");
-	ft_printf("%d%d%d%d%d", 1, -2, 3, -4, 5);
-	ft_putendl("\nvraie printf : ");
-	printf("%d%d%d%d%d", 1, -2, 3, -4, 5);
+	ft_printf("111%s\n", "222");
+	ft_putendl("vraie printf : ");
+	printf("111%s\n", "222");
 	
 	ft_putendl("\n\nmienne : ");
-	ft_printf("a%db%dc%dd", 1, -2, 3);
-	ft_putendl("\nvraie printf : ");
-	printf("a%db%dc%dd", 1, -2, 3);
+	ft_printf("{%s\n}", NULL);
+	ft_putendl("vraie printf : ");
+	printf("{%s\n}", NULL);
 	
 	ft_putendl("\n\nmienne : ");
-	ft_printf("%d", INT_MAX);
-	ft_putendl("\nvraie printf : ");
-	printf("%d", INT_MAX);
-	
-	ft_putendl("\n\nmienne : ");
-	ft_printf("%d", INT_MIN);
-	ft_putendl("\nvraie printf : ");
-	printf("%d", INT_MIN);
-
-	// ft_putendl("\nmienne : ");
-	// ft_printf("%%");
-	// ft_putendl("\nvraie printf : ");
-	// printf("%%");
+	ft_printf("{%s\n}", "");
+	ft_putendl("vraie printf : ");
+	printf("{%s\n}", "");
 }
