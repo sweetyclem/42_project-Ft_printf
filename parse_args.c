@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/20 11:50:13 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/02 17:05:44 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/02 17:12:12 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int	get_args(va_list *va, char **str, int i)
 	else if (c == '%')
 	{
 		ft_putchar('%');
+		char_written = 1;
 	}
 	*str = &(*str)[i];
 	return (char_written);
