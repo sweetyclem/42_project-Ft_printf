@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:19:13 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/02 12:46:29 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/02 14:34:31 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int		ft_printf(const char *format, ...)
 	return (char_written);
 }
 
-size_t	parse_format(va_list *va, char *format)
+int	parse_format(va_list *va, char *format)
 {
-	size_t	char_written;
+	int	char_written;
 	char	*str;
 
 	char_written = 0;
