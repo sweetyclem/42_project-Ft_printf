@@ -6,18 +6,19 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/20 11:50:13 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/02 06:46:46 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/02 12:46:42 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-#include <stdio.h>
 
-size_t	parse_args(va_list *va, char **str, int i)
+size_t	parse_args(va_list *va, char **str)
 {
 	size_t char_written;
+	int i;
 
 	char_written = 0;
+	i = 0;
 	if ((*str)[i] == '%')
 	{
 		i++;
