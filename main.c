@@ -25,12 +25,13 @@ int main(void)
 	printf("111%s\n", "222");
 	
 	ft_putendl("\n\nmienne : ");
-	ft_printf("{%s\n}", NULL);
+	ft_printf("{%s}\n", NULL);
+	//ft_putnbrendl(printf("{%s}\n", NULL));
 	ft_putendl("vraie printf : ");
-	printf("{%s\n}", NULL);
+	printf("{%s}\n", NULL);
 	
 	ft_putendl("\n\nmienne : ");
-	ft_printf("{%s\n}", "");
+	ft_printf("{%s}\n", "");
 	ft_putendl("vraie printf : ");
-	printf("{%s\n}", "");
+	printf("{%s}\n", "");
 }
