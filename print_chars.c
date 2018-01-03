@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 07:23:25 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/03 10:23:52 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/03 16:08:41 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,8 @@ int print_char(va_list *va)
 
     char_written = 0;
     c = (char)va_arg(*va, int);
-    if (c)
-    {
-        char_written = 1;
-        ft_putchar(c);
-    }
+    char_written = 1;
+    ft_putchar(c);
     return(char_written);
 }
 
