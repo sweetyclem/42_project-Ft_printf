@@ -6,21 +6,26 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 07:00:40 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/03 08:48:52 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/03 14:33:09 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int print_int(va_list *va)
+int print_int(va_list *va, char c)
 {
     int char_written;
     long long int nb;
 
     char_written = 0;
-    nb = (long long int)va_arg(*va, int);
-	char_written = ft_longlong_len(nb);
-	ft_putnbr(nb);
+    if (c == 'd' || c == 'i' || c == 'D')
+    {
+        nb = (long long int)va_arg(*va, int);
+        char_written = ft_longlong_len(nb);
+        ft_putnbr(nb);
+    }
+    else if (c == 'u' || c == 'U')
+		char_written = print_u_int(va);
     return(char_written);
 }
 
@@ -31,8 +36,6 @@ int print_int_base(va_list *va, char c)
     char_written = 0;
 	if (c == 'o' || c == 'O')
 		char_written = print_o_int(va);
-	else if (c == 'u' || c == 'U')
-		char_written = print_u_int(va);
 	else if (c == 'x' || c == 'X')
 		char_written = print_x_int(va, c);
     return(char_written);

@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/20 11:50:13 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/03 09:34:14 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/03 14:34:01 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int	call_appropriate_function(va_list *va, char **str, int i)
 
 	char_written = 0;
 	c = (*str)[i];
-	if (c == 'd' || c == 'i' || c == 'D')
-		char_written = print_int(va);
+	if (ft_strchr("dDiuU", c))
+		char_written = print_int(va, c);
 	else if (c == 's' || c == 'S')
 		char_written = print_string(va);
 	else if (c == 'c' || c == 'C')
