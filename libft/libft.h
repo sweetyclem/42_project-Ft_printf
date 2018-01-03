@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 09:47:49 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/21 08:43:45 by yvillepo         ###   ########.fr       */
+/*   Updated: 2018/01/03 07:13:59 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,6 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 size_t			ft_longlong_len(long long int nbr);
 void			ft_putlonglong(long long int nbr);
 void			ft_putnstr(const char *str, size_t n);
+int				ft_int_len(int n);
 
 #endif

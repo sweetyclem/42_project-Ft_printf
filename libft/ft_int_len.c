@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_int_len.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 17:01:18 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/03 07:20:08 by cpirlot          ###   ########.fr       */
+/*   Created: 2018/01/03 07:13:01 by cpirlot           #+#    #+#             */
+/*   Updated: 2018/01/03 07:13:40 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_itoa(int n)
+int	ft_int_len(int n)
 {
-	char	*s;
-	int		i;
+	int len;
 
-	i = ft_int_len(n) - 1;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	s = ft_strnew(ft_int_len(n));
-	if (s == NULL)
-		return (0);
+	len = 1;
 	if (n < 0)
 	{
+		len++;
 		n = -n;
-		s[0] = '-';
 	}
-	while (i >= 0 && s[i] != '-')
+	while (n >= 10)
 	{
-		s[i] = n % 10 + '0';
 		n = n / 10;
-		i--;
+		len++;
 	}
-	return (s);
+	return (len);
 }
