@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 09:47:49 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/03 08:48:46 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/03 10:17:46 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,6 @@ void			ft_putnchar(char c, size_t n);
 size_t			ft_uint_len_base(unsigned long long int nbr, unsigned int base);
 void			ft_print_hex(int nb);
 void			ft_print_hex_caps(int nb);
+void			ft_print_ptr(size_t nb);
 
 #endif

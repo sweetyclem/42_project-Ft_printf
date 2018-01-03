@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 07:23:25 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/03 09:07:27 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/03 10:23:52 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,26 @@ int print_char(va_list *va)
 int print_ptr(va_list *va)
 {
     int char_written;
+    void    *ptr;
 
     char_written = 0;
-    (void)va;
+    
+    ptr = va_arg(*va, void *);
+    char_written = ptr_len_base((size_t)ptr, 16);
+    ft_putstr("0x");
+    ft_print_ptr((size_t)ptr);
+    return(char_written + 2);
+}
 
-    return(char_written);
+size_t		ptr_len_base(size_t ptr, unsigned int base)
+{
+	size_t		len;
+
+	len = 1;
+	while (ptr >= base)
+	{
+		ptr /= base;
+		len++;
+	}
+	return (len);
 }
