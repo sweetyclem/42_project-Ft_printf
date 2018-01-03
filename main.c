@@ -8,6 +8,21 @@ int main(void)
 	ft_putnbrendl(ft_printf("{% %}\n"));
 	ft_putendl("vraie printf : ");
 	ft_putnbrendl(printf("{% %}\n"));
+	
+	ft_putendl("\n\nmienne : ");
+	ft_putnbrendl(ft_printf("%   %\n", "test"));
+	ft_putendl("vraie printf : ");
+	ft_putnbrendl(printf("%   %\n", "test"));
+
+	ft_putendl("\n\nmienne : ");
+	ft_putnbrendl(ft_printf("%5%\n"));
+	ft_putendl("vraie printf : ");
+	ft_putnbrendl(printf("%5%\n"));
+	
+	ft_putendl("\n\nmienne : ");
+	ft_putnbrendl(ft_printf("%x\n", -42));
+	ft_putendl("vraie printf : ");
+	ft_putnbrendl(printf("%x\n", -42));
 
 	// ft_putendl("\n\nmienne : ");
 	// ft_putnbrendl(ft_printf("%S\n", L"Á±≥"));
@@ -43,9 +58,4 @@ int main(void)
 	ft_putnbrendl(ft_printf("%U\n", ULONG_MAX));
 	ft_putendl("vraie printf : ");
 	ft_putnbrendl(printf("%U\n", ULONG_MAX));
-	
-	ft_putendl("\n\nmienne : ");
-	ft_putnbrendl(ft_printf("%c\n", 0));
-	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%c\n", 0));
 }

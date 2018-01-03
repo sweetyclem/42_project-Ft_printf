@@ -6,12 +6,19 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:24:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/03 14:33:57 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/03 16:21:47 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include "libft/libft.h"
+
+# define MIN_INT -2147483648
+# define MAX_INT 2147483647
+# define MIN_UINT -4294967295
+# define MAX_UINT 4294967295
+# define MIN_LONG -9223372036854775807
+# define MAX_LONG 9223372036854775807
 
 int ft_printf(const char *format, ...);
 int	parse_format(va_list *va, char *format);

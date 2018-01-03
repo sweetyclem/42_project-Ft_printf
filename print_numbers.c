@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 07:00:40 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/03 14:33:09 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/03 16:58:37 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,8 @@ int print_x_int(va_list *va, char c)
     nb = (unsigned long long int)va_arg(*va, long long int);
 	char_written = ft_uint_len_base(nb, 16);
 	if (c == 'x')
-		ft_print_hex(nb);
+		ft_print_u_l_hex(nb, "0123456789abcdef");
 	else
-		ft_print_hex_caps(nb);
+		ft_print_u_l_hex(nb, "0123456789ABCDEF");
     return(char_written);
 }
