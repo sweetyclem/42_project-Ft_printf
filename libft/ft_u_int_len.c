@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_u_int_len.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/18 13:24:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/03 07:39:50 by cpirlot          ###   ########.fr       */
+/*   Created: 2018/01/03 07:25:59 by cpirlot           #+#    #+#             */
+/*   Updated: 2018/01/03 07:26:57 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include "libft/libft.h"
+#include "libft.h"
 
-int ft_printf(const char *format, ...);
-int	parse_format(va_list *va, char *format);
+int	ft_u_int_len(unsigned int n)
+{
+	int len;
 
-//Args
-int	parse_args(va_list *va, char **str);
-int	call_appropriate_function(va_list *va, char **str, int i);
-
-// Printing
-int print_int(va_list *va);
-int print_u_int(va_list *va);
-int print_char(va_list *va);
-int print_string(va_list *va);
+	len = 1;
+	while (n >= 10)
+	{
+		n = n / 10;
+		len++;
+	}
+	return (len);
+}
