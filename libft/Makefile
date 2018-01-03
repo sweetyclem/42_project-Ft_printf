@@ -24,7 +24,7 @@ SRC	= ft_atoi.c ft_bzero.c ft_isalpha.c ft_isalnum.c ft_isascii.c ft_isdigit.c f
 	ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c ft_tolower.c ft_toupper.c ft_strrev.c ft_putnbrendl.c \
 	ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c ft_lstnew.c ft_skip_whitespace.c ft_abs.c \
 	ft_putlonglong.c ft_longlong_len.c ft_putnstr.c ft_int_len.c ft_u_int_len.c ft_put_nbr_base.c ft_put_longlong_base.c \
-	ft_putnchar.c
+	ft_putnchar.c ft_uint_len_base.c
 
 OBJ = $(SRC:.c=.o)
 
