@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:24:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/03 08:47:19 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/03 09:05:03 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,4 @@ int print_x_int(va_list *va, char c);
 
 int print_char(va_list *va);
 int print_string(va_list *va);
+int print_ptr(va_list *va);
