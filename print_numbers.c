@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 07:00:40 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/03 08:26:47 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/03 08:48:52 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,8 @@ int print_int_base(va_list *va, char c)
 		char_written = print_o_int(va);
 	else if (c == 'u' || c == 'U')
 		char_written = print_u_int(va);
-	else if (c == 'x')
-	{
-
-	}
-	else if (c == 'X')
-	{
-
-	}
+	else if (c == 'x' || c == 'X')
+		char_written = print_x_int(va, c);
     return(char_written);
 }
 
@@ -65,5 +59,20 @@ int print_o_int(va_list *va)
     nb = (unsigned long long int)va_arg(*va, long long int);
 	char_written = ft_uint_len_base(nb, 8);
 	ft_put_longlong_base(nb, 8);
+    return(char_written);
+}
+
+int print_x_int(va_list *va, char c)
+{
+    int char_written;
+    unsigned long long int nb;
+
+    char_written = 0;
+    nb = (unsigned long long int)va_arg(*va, long long int);
+	char_written = ft_uint_len_base(nb, 16);
+	if (c == 'x')
+		ft_print_hex(nb);
+	else
+		ft_print_hex_caps(nb);
     return(char_written);
 }
