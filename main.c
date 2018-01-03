@@ -34,4 +34,9 @@ int main(void)
 	ft_printf("{%s}\n", "");
 	ft_putendl("vraie printf : ");
 	printf("{%s}\n", "");
+
+	ft_putendl("\n\nmienne : ");
+	ft_printf("a%ub%uc%ud\n", 0, 55555, 100000);
+	ft_putendl("vraie printf : ");
+	printf("a%ub%uc%ud\n", 0, 55555, 100000);
 }

@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/20 11:50:13 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/03 07:40:09 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/03 07:59:09 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ int	call_appropriate_function(va_list *va, char **str, int i)
 		ft_putchar('%');
 		char_written = 1;
 	}
-	else if (ft_strchr("ouxX", c))
-		char_written = print_u_int(va);
+	else if (ft_strchr("oOuUxX", c))
+		char_written = print_int_base(va, c);
 	*str = &(*str)[i];
 	return (char_written);
 }

@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:24:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/03 07:39:50 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/03 08:14:57 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	call_appropriate_function(va_list *va, char **str, int i);
 
 // Printing
 int print_int(va_list *va);
+int print_int_base(va_list *va, char c);
 int print_u_int(va_list *va);
+int print_o_int(va_list *va);
 int print_char(va_list *va);
 int print_string(va_list *va);
