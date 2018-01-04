@@ -3,3 +3,4 @@ printf.h.gch
 *.a
 *.o
 compil.sh
+a.out.*
