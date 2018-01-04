@@ -12,14 +12,6 @@ int main(void)
 	ft_putnbrendl(printf("% "));
 	ft_putchar('\n');
 
-	ft_putendl("\n\nprintf(\"% v\")");
-	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("% v"));
-	ft_putchar('\n');
-	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("% v"));
-	ft_putchar('\n');
-
 	ft_putendl("\n\nprintf(\"%5%\"))");
 	ft_putendl("mienne : ");
 	ft_putnbrendl(ft_printf("%5%\n"));

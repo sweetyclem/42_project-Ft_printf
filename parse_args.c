@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/20 11:50:13 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/04 10:22:08 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/04 10:55:06 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*skip_format(char *str)
 
 	i = 0;
 
-	while (ft_strchr("#0-+ hljz.123456789", str[i]))
+	while (ft_strchr("#0-+ hljz.123456789", str[i]) && str[i])
 	{
 		i++;
 	}
@@ -51,7 +51,7 @@ int	dispatch_conversion(va_list *va, char **str)
 	i = 0;
 	char_written = 0;
 	c = (*str)[i];
-	if (ft_strchr("dDiuU", c))
+	 if (ft_strchr("dDiuU", c))
 		char_written = print_int(va, c);
 	else if (c == 's' || c == 'S')
 		char_written = print_string(va);
