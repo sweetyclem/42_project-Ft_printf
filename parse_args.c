@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/20 11:50:13 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/04 10:55:06 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/04 11:01:15 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	dispatch_conversion(va_list *va, char **str)
 		char_written = print_int_base(va, c);
 	else if (c == 'p')
 		char_written = print_ptr(va);
-	else if (c == '%')
+	else
 	{
 		ft_putchar(c);
 		char_written = 1;
