@@ -22,11 +22,11 @@ int main(void)
 	ft_putendl("vraie printf : ");
 	ft_putnbrendl(printf("%05c\n", 42));
 	
-	ft_putendl("\n\nprintf(\"%25c\"))");
+	ft_putendl("\n\nprintf(\"%.25c\"))");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%25c\n", 42));
+	ft_putnbrendl(ft_printf("%.25c\n", 42));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%25c\n", 42));
+	ft_putnbrendl(printf("%.25c\n", 42));
 	
 	// ft_putendl("\n\nprintf(\"%x\", -42)");
 	// ft_putendl("mienne : ");
