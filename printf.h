@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:24:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/08 15:31:19 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/08 15:37:08 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ struct		s_format
 	char	conversion;
 	int		min_width;
 	int		zero;
+	int 	plus;
 } typedef	t_format;
 
 int 		ft_printf(const char *format, ...);
@@ -39,6 +40,7 @@ t_format	save_format(char *str, int i);
 // Format
 int			get_width(char *str);
 int			get_zero_flag(char *str);
+int			get_plus_flag(char *str);
 
 // Printing
 int 		print_int(va_list *va, char c);
