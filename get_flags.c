@@ -1,50 +1,81 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   format.c                                           :+:      :+:    :+:   */
+/*   get_flags.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/08 13:40:24 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/08 14:34:58 by cpirlot          ###   ########.fr       */
+/*   Created: 2018/01/08 14:50:27 by cpirlot           #+#    #+#             */
+/*   Updated: 2018/01/08 15:10:57 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	get_width(char *str)
+int	get_zero_flag(char *str, int minus)
 {
 	int i;
-	int j;
-	char *tmp;
-	int width;
 	
 	i = 0;
-	j = 0;
-	width = 0;
-	tmp = ft_strnew(i);
 	while (str[i] != '\0')
 	{
-		if (ft_strchr("123456789", str[i]))
-		{
-			tmp[j] = str[i];
-			j++;
-		}
+		if (str[i] == '0' && !minus)
+			return (1);
 		i++;
 	}
-	width = ft_atoi(tmp);
-	free(tmp);
-	return (width);
+	return (0);
 }
 
-int	get_option_zero(char *str)
+int	get_pound_flag(char *str)
 {
 	int i;
 	
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] == '0')
+		if (str[i] == '#')
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+int	get_minus_flag(char *str)
+{
+	int i;
+	
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == '#')
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+int	get_plus_flag(char *str)
+{
+	int i;
+	
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == '#')
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+int	get_space_flag(char *str)
+{
+	int i;
+	
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == '#')
 			return (1);
 		i++;
 	}
