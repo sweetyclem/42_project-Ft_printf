@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/20 11:50:13 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/08 14:07:24 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/08 14:36:14 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	parse_args(va_list *va, char **str)
 		if ((*str)[i] != '\0')
 		{
 			*str = handle_format(&(*str)[i], &format);
+			ft_putstr("option zero : ");
+			ft_putnbrendl(format.zero);
 			return dispatch_conversion(va, &(*str), format);
 		}
 	}
@@ -51,6 +53,7 @@ t_format	save_format(char *full_str, int i)
 	str = ft_strnew(i);
 	str = ft_strncpy(str, full_str, i);
 	format.min_width = get_width(str);
+	format.zero = get_option_zero(str);
 	free(str);
 	return (format);
 }
