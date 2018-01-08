@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 13:40:24 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/08 13:49:19 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/08 14:08:22 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ int	get_width(char *str)
 	int i;
 	int j;
 	char *tmp;
+	int width;
 	
 	i = 0;
 	j = 0;
+	width = 0;
 	tmp = ft_strnew(i);
 	while (str[i] != '\0')
 	{
@@ -30,5 +32,7 @@ int	get_width(char *str)
 		}
 		i++;
 	}
-	return (ft_atoi(tmp));
+	width = ft_atoi(tmp);
+	free(tmp);
+	return (width);
 }
