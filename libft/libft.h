@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 09:47:49 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/04 08:54:57 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/08 09:56:30 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,8 @@ void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 size_t			ft_longlong_len(long long int nbr);
-void			ft_putlonglong(long long int nbr);
+void			ft_putlonglong(long long int nb);
+void			ft_put_ulonglong(unsigned long long int nb);
 void			ft_putnstr(const char *str, size_t n);
 int				ft_int_len(int n);
 int				ft_u_int_len(unsigned int n);

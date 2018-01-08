@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 07:00:40 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/04 08:57:49 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/08 09:57:32 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int print_u_int(va_list *va)
     char_written = 0;
     nb = (unsigned long long int)va_arg(*va, long long int);
 	char_written = ft_u_int_len(nb);
-	ft_putnbr(nb);
+	ft_put_ulonglong(nb);
     return(char_written);
 }
 

@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putlonglong.c                                   :+:      :+:    :+:   */
+/*   ft_put_ulonglong.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 07:23:25 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/08 09:55:39 by cpirlot          ###   ########.fr       */
+/*   Created: 2018/01/08 09:54:41 by cpirlot           #+#    #+#             */
+/*   Updated: 2018/01/08 09:55:57 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_putlonglong(long long int nb)
+void			ft_put_ulonglong(unsigned long long int nb)
 {
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		ft_putnbr(-(nb / 10));
-		ft_putchar('0' - (nb % 10));
-	}
-	else if (nb < 10)
+	if (nb < 10)
 		ft_putchar('0' + nb);
 	else
 	{
