@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 13:40:24 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/08 15:31:30 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/08 15:38:35 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	get_width(char *str)
 	tmp = ft_strnew(i);
 	while (str[i] != '\0')
 	{
-		if (ft_strchr("123456789", str[i]))
+		if (ft_strchr("123456789", str[i]) && i > 0 && str[i - 1] != '.')
 		{
 			tmp[j] = str[i];
 			j++;
