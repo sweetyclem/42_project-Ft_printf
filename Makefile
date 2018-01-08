@@ -6,7 +6,7 @@
 #    By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/18 13:19:02 by cpirlot           #+#    #+#              #
-#    Updated: 2018/01/03 07:02:10 by cpirlot          ###   ########.fr        #
+#    Updated: 2018/01/08 13:40:32 by cpirlot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME	=  libftprintf.a
 CC		= gcc
 FLAGS	= -Wall -Werror -Wextra
 INCLUDES = printf.h
-SRC	= ft_printf.c print_chars.c print_numbers.c parse_args.c
+SRC	= ft_printf.c print_chars.c print_numbers.c parse_args.c fomrat.c
 LIBFT = ./libft
 
 OBJ = $(SRC:.c=.o)
