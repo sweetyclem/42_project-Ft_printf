@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 15:31:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/09 07:12:56 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/09 08:36:02 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	get_zero_flag(char *str, int minus)
 {
-	int i;
-	char *tmp;
-	
+	int		i;
+	char	*tmp;
+
 	i = 0;
 	while (str[i] != '\0')
 	{
@@ -24,11 +24,9 @@ int	get_zero_flag(char *str, int minus)
 		{
 			tmp = ft_strnew(i);
 			tmp = ft_strncpy(tmp, str, i);
-			if (ft_strchr(tmp, '.'))
-				return (0);
 			while (*tmp)
 			{
-				if (ft_strchr("123456789", *tmp))
+				if (ft_strchr("123456789", *tmp) || ft_strchr(tmp, '.'))
 				{
 					free(tmp);
 					return (0);
@@ -46,7 +44,7 @@ int	get_zero_flag(char *str, int minus)
 int	get_plus_flag(char *str)
 {
 	int i;
-	
+
 	i = 0;
 	while (str[i] != '\0')
 	{
@@ -60,7 +58,7 @@ int	get_plus_flag(char *str)
 int	get_minus_flag(char *str)
 {
 	int i;
-	
+
 	i = 0;
 	while (str[i] != '\0')
 	{
@@ -74,7 +72,7 @@ int	get_minus_flag(char *str)
 int	get_pound_flag(char *str)
 {
 	int i;
-	
+
 	i = 0;
 	while (str[i] != '\0')
 	{
@@ -88,7 +86,7 @@ int	get_pound_flag(char *str)
 int	get_space_flag(char *str)
 {
 	int i;
-	
+
 	i = 0;
 	while (str[i] != '\0')
 	{
