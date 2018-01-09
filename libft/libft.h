@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 09:47:49 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/09 17:09:20 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/09 17:30:55 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,4 +109,6 @@ int				ft_print_u_l_hex(unsigned long long int nb, const char *str);
 void			ft_putlong(long nb);
 size_t			ft_longlen(long int nb);
 void			ft_putlong_base(long nb, char base);
+void			ft_putulong(unsigned long nb);
+size_t		 	ft_ulong_len(unsigned long nb);
 #endif
