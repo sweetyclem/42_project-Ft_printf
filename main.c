@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 09:11:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/09 09:13:03 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/09 14:10:53 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 int	main(void)
 {
-	ft_putendl("printf(\"%0 d\", 42)");
+	ft_putendl("printf(\"{% S}\", L\"(null)\"");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%0 d\n", 42));
+	ft_putnbrendl(ft_printf("{% S}\n", L"(null)"));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%0 d\n", 42));
+	ft_putnbrendl(printf("{% S", L"(null)"));
 
 	ft_putendl("\n\nprintf(\"%5%\"))");
 	ft_putendl("mienne : ");
@@ -34,51 +34,15 @@ int	main(void)
 	ft_putendl("vraie printf : ");
 	ft_putnbrendl(printf("%05c\n", 42));
 
-	ft_putendl("\n\nprintf(\"%.50c\"))");
+	ft_putendl("\n\nprintf(\"%#o\", 0))");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%.50c\n", 42));
+	ft_putnbrendl(ft_printf("%#o\n", 0));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%.50c\n", 42));
+	ft_putnbrendl(printf("%#o\n", 0));
+
+	ft_putendl("\n\nprintf(\"@moulitest: %#.o %#.0o\", 0, 0))");
+	ft_putendl("mienne : ");
+	ft_putnbrendl(ft_printf("@moulitest: %#.o %#.0o\n", 0, 0));
+	ft_putendl("vraie printf : ");
+	ft_putnbrendl(printf("@moulitest: %#.o %#.0o\n", 0, 0));
 }
-
-/* ft_putendl("\n\nprintf(\"%x\", -42)");
-	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%x\n", -42));
-	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%x\n", -42));
-
-	ft_putendl("\n\nprintf(\"%D\", LONG_MAX)");
-	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%D\n", LONG_MAX));
-	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%D\n", (int)LONG_MAX));
-
-	ft_putendl("\n\nprintf(\"%D\", LONG_MIN)");
-	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%D\n", LONG_MIN));
-	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%D\n", LONG_MIN));
-
-	ft_putendl("\n\nprintf(\"%O\", LONG_MAX)");
-	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%O\n", LONG_MAX));
-	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%O\n", LONG_MAX));
-
-	ft_putendl("\n\nprintf(\"%u\", UINT_MAX)");
-	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%u\n", UINT_MAX));
-	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%u\n", UINT_MAX));
-
-	ft_putendl("\n\nprintf(\"%U\", ULONG_MAX / 2)");
-	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%U\n", ULONG_MAX / 2));
-	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%U\n", ULONG_MAX / 2));
-
-	ft_putendl("\n\nprintf(\"%U\", ULONG_MAX))");
-	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%U\n", ULONG_MAX));
-	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%U\n", ULONG_MAX)); */

@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 07:00:40 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/09 13:21:47 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/09 14:11:22 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	print_int_base(va_list *va, t_format format)
 	char_written = 0;
 	c = format.conversion;
 	if (c == 'o' || c == 'O')
-		char_written = print_o_int(va);
+		char_written = print_o_int(va, format);
 	else if (c == 'x' || c == 'X')
 		char_written = print_x_int(va, format);
 	return (char_written);
@@ -58,7 +58,7 @@ int	print_u_int(va_list *va)
 	return (char_written);
 }
 
-int	print_o_int(va_list *va)
+int	print_o_int(va_list *va, t_format format)
 {
 	int						char_written;
 	unsigned long long int	nb;
@@ -66,6 +66,7 @@ int	print_o_int(va_list *va)
 	char_written = 0;
 	nb = (unsigned long long int)va_arg(*va, long long int);
 	char_written = ft_uint_len_base(nb, 8);
+	char_written += print_pound(format, nb);
 	ft_put_longlong_base(nb, 8);
 	return (char_written);
 }

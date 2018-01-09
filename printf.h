@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:24:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/09 13:20:07 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/09 14:09:18 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,12 @@ int				get_space_flag(char *str, int minus, int plus);
 int				print_int(va_list *va, t_format format);
 int				print_int_base(va_list *va, t_format format);
 int				print_u_int(va_list *va);
-int				print_o_int(va_list *va);
+int				print_o_int(va_list *va, t_format format);
 int				print_x_int(va_list *va, t_format format);
 int				print_char(va_list *va);
 int				print_string(va_list *va);
 int				print_ptr(va_list *va);
 size_t			ptr_len_base(size_t ptr, unsigned int base);
 int				print_space(t_format format, int nb);
+int				print_pound(t_format format, int nb);
 #endif
