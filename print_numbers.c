@@ -6,22 +6,25 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 07:00:40 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/09 09:03:24 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/09 13:21:47 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	print_int(va_list *va, char c)
+int	print_int(va_list *va, t_format format)
 {
 	int				char_written;
 	long long int	nb;
+	char			c;
 
 	char_written = 0;
+	c = format.conversion;
 	if (c == 'd' || c == 'i' || c == 'D')
 	{
 		nb = (long long int)va_arg(*va, int);
 		char_written = ft_longlong_len(nb);
+		char_written += print_space(format, nb);
 		ft_putnbr(nb);
 	}
 	else if (c == 'u' || c == 'U')
@@ -29,15 +32,17 @@ int	print_int(va_list *va, char c)
 	return (char_written);
 }
 
-int	print_int_base(va_list *va, char c)
+int	print_int_base(va_list *va, t_format format)
 {
-	int	char_written;
+	int		char_written;
+	char	c;
 
 	char_written = 0;
+	c = format.conversion;
 	if (c == 'o' || c == 'O')
 		char_written = print_o_int(va);
 	else if (c == 'x' || c == 'X')
-		char_written = print_x_int(va, c);
+		char_written = print_x_int(va, format);
 	return (char_written);
 }
 
@@ -65,12 +70,14 @@ int	print_o_int(va_list *va)
 	return (char_written);
 }
 
-int	print_x_int(va_list *va, char c)
+int	print_x_int(va_list *va, t_format format)
 {
 	int						char_written;
 	unsigned long long int	nb;
+	char					c;
 
 	char_written = 0;
+	c = format.conversion;
 	nb = (unsigned long long int)va_arg(*va, unsigned long long int);
 	if (c == 'x')
 		char_written = ft_print_u_l_hex(nb, "0123456789abcdef");

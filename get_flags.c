@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 15:31:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/09 08:36:02 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/09 11:59:38 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,14 +83,14 @@ int	get_pound_flag(char *str)
 	return (0);
 }
 
-int	get_space_flag(char *str)
+int	get_space_flag(char *str, int minus, int plus)
 {
 	int i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] == ' ')
+		if (str[i] == ' ' && !minus && !plus)
 			return (1);
 		i++;
 	}
