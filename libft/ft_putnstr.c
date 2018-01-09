@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 07:23:25 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/12/30 11:31:02 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/09 09:06:04 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	ft_putnstr(const char *str, size_t n)
 	if (str != NULL)
 	{
 		len = ft_strlen(str);
-		write (1, str, MIN(len, n));
+		write(1, str, MIN(len, n));
 	}
 }

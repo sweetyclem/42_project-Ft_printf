@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 10:17:10 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/03 10:17:24 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/09 09:07:25 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_print_ptr(size_t nb)
 	char *str;
 
 	str = "0123456789abcdef";
-    if (nb < 16)
+	if (nb < 16)
 		ft_putchar(str[nb]);
 	else
 	{

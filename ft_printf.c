@@ -6,13 +6,13 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:19:13 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/08 11:29:14 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/09 09:09:01 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int		ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	size_t	char_written;
 	va_list va;
@@ -39,7 +39,7 @@ int	parse_format(va_list *va, char *str)
 		else
 		{
 			ft_putchar(*str);
-			char_written++;	
+			char_written++;
 		}
 		if (*str != '\0')
 			str++;
