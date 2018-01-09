@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 07:00:40 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/09 15:16:51 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/09 16:17:26 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,21 @@ int	print_int(va_list *va, t_format format)
 
 	char_written = 0;
 	c = format.conversion;
-	if (c == 'd' || c == 'i' || c == 'D')
+	if (c == 'd' || c == 'i')
 	{
 		nb = (long long int)va_arg(*va, int);
 		char_written += print_plus(format, nb);
-		char_written += ft_longlong_len(nb);
 		char_written += print_space(format, nb);
+		char_written += ft_longlong_len(nb);
 		ft_putnbr(nb);
+	}
+	else if (c == 'D')
+	{
+		nb = (long)va_arg(*va, long);
+		char_written += print_plus(format, nb);
+		char_written += print_space(format, nb);
+		char_written += ft_longlen(nb);
+		ft_putlong(nb);
 	}
 	else if (c == 'u' || c == 'U')
 		char_written += print_u_int(va, format);

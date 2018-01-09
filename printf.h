@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:24:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/09 15:16:40 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/09 15:47:11 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,7 @@
 # define PRINTF_H
 # include <stdarg.h>
 # include "libft/libft.h"
-
-# define MIN_INT -2147483648
-# define MAX_INT 2147483647
-# define MIN_UINT -4294967295
-# define MAX_UINT 4294967295
-# define MIN_LONG -9223372036854775807
-# define MAX_LONG 9223372036854775807
+# include <limits.h>
 
 typedef struct	s_format
 {
