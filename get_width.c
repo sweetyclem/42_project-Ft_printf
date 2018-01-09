@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 13:40:24 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/08 17:36:01 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/09 08:51:05 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	get_width(char *str)
 {
-	int i;
-	int j;
-	char *tmp;
-	int width;
-	
+	int		i;
+	int		j;
+	char	*tmp;
+	int		width;
+
 	i = 0;
 	j = 0;
 	width = 0;
