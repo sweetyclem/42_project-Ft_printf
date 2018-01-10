@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 09:11:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 14:51:09 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 14:54:49 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ int	main(void)
 	ft_putendl("vraie printf : ");
 	ft_putnbrendl(printf("%#6o\n", 2500));
 
-	ft_putendl("\n\nprintf(\"%-10.\")");
+	ft_putendl("\n\nprintf(\"%u\", -1)");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%-10.5o\n", 2500));
+	ft_putnbrendl(ft_printf("%u\n", -1));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%-10.5o\n", 2500));
+	ft_putnbrendl(printf("%u\n", -1));
 	
-	ft_putendl("\n\nprintf(\"%-010s is a string\", \"this\")");
+	ft_putendl("\n\nprintf(\"%u\", 4294967296)");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%-010s is a string\n", "this"));
+	ft_putnbrendl(ft_printf("%u\n", 4294967296));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%-010s is a string\n", "this"));
+	ft_putnbrendl(printf("%u\n", 4294967296));
 }

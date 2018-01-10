@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 08:25:32 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 14:15:58 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 14:59:17 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	print_width(t_format format, int char_written)
 	if (width > 0 && width > char_written && !format.zero && !format.minus)
 	{
 		spaces_written = width - char_written;
+		if (format.pound)
+			spaces_written -= 1;
 		i = spaces_written;
 		while (i > 0)
 		{
