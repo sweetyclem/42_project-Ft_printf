@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 09:11:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 08:10:56 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 09:30:44 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,21 @@ int	main(void)
 	ft_putendl("vraie printf : ");
 	ft_putnbrendl(printf("{% S}\n", L"(null)"));
 
-	ft_putendl("\n\nprintf(\"% U|%+U\", 42, 42)");
+	ft_putendl("\n\nprintf(\"{%3c}\", 0)");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("% U|%+U\n", 42, 42));
+	ft_putnbrendl(ft_printf("{%3c}\n", 0));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("% U|%+U\n", 42, 42));
+	ft_putnbrendl(printf("{%3c}\n", 0));
 
-	ft_putendl("\n\nprintf(\"%hhu / %hhu\", SHRT_MAX - 42,  SHRT_MAX - 4200)");
+	ft_putendl("\n\nprintf(\"{%5p}\", 0)");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%hhu / %hhu\n", SHRT_MAX - 42, SHRT_MAX - 4200));
+	ft_putnbrendl(ft_printf("{%5p}\n", 0));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%hhu / %hhu\n", SHRT_MAX - 42, SHRT_MAX - 4200));
+	ft_putnbrendl(printf("{%5p}\n", 0));
+
+	ft_putendl("\n\nprintf(\"{%10R}\")");
+	ft_putendl("mienne : ");
+	ft_putnbrendl(ft_printf("{%10R}\n"));
+	ft_putendl("vraie printf : ");
+	ft_putnbrendl(printf("{%10R}\n"));
 }
