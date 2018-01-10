@@ -6,7 +6,7 @@
 #    By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/18 13:19:02 by cpirlot           #+#    #+#              #
-#    Updated: 2018/01/10 11:06:22 by cpirlot          ###   ########.fr        #
+#    Updated: 2018/01/10 15:54:34 by cpirlot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ FLAGS	= -Wall -Werror -Wextra
 INCLUDES = printf.h
 SRC	= ft_printf.c print_chars.c print_numbers.c parse_args.c \
 get_width.c get_flags.c print_flags.c print_padding.c print_diu_int.c \
-print_ox_int.c
+print_ox_int.c get_length.c
 LIBFT = ./libft
 
 OBJ = $(SRC:.c=.o)

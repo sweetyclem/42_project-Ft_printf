@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/20 11:50:13 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 14:45:57 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 15:59:05 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,10 @@ t_format	save_format(char *full_str, int i)
 	format.zero = get_zero_flag(str, format.minus);
 	format.pound = get_pound_flag(str);
 	format.space = get_space_flag(str, format.minus, format.plus);
+	format.l = get_length(str, 'l');
+	format.h = get_length(str, 'h');
+	format.j = get_length(str, 'j');
+	format.z = get_length(str, 'z');
 	free(str);
 	return (format);
 }

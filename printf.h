@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:24:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 14:41:53 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 15:57:23 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ typedef struct	s_format
 	int		minus;
 	int		pound;
 	int		space;
+	int		l;
+	int		h;
+	int		j;
+	int		z;
 }				t_format;
 
 int				ft_printf(const char *format, ...);
@@ -47,6 +51,7 @@ int				get_plus_flag(char *str);
 int				get_minus_flag(char *str);
 int				get_pound_flag(char *str);
 int				get_space_flag(char *str, int minus, int plus);
+int				get_length(char *str, char c);
 
 /*
 ** Printing for flags
