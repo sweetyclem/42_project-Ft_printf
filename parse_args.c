@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/20 11:50:13 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 10:05:52 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 10:57:29 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,9 @@ int			dispatch_conversion(va_list *va, char **str, t_format format)
 		char_written = print_ptr(va, format);
 	else
 	{
+		char_written += 1;
+		char_written += print_width(format, char_written);
 		ft_putchar(c);
-		char_written = 1;
 	}
 	*str = &(*str)[i];
 	return (char_written);
