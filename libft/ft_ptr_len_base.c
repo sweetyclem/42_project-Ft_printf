@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_width.c                                      :+:      :+:    :+:   */
+/*   ft_ptr_len_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/10 08:25:32 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 10:04:41 by cpirlot          ###   ########.fr       */
+/*   Created: 2018/01/10 09:54:41 by cpirlot           #+#    #+#             */
+/*   Updated: 2018/01/10 09:56:15 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-int	print_width(t_format format, int char_written)
+size_t	ft_ptr_len_base(size_t ptr, unsigned int base)
 {
-	int	spaces_written;
-	int	i;
+	size_t	len;
 
-	spaces_written = 0;
-	i = 0;
-	if (format.min_width > 0 && format.min_width > char_written)
+	len = 1;
+	while (ptr >= base)
 	{
-		spaces_written = format.min_width - char_written;
-		i = spaces_written;
-		while (i > 0)
-		{
-			ft_putchar(' ');
-			i--;
-		}
+		ptr /= base;
+		len++;
 	}
-	return (spaces_written);
+	return (len);
 }

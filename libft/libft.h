@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 09:47:49 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 09:42:17 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 09:56:11 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,4 +112,5 @@ size_t			ft_longlen(long int nb);
 void			ft_putlong_base(long nb, char base);
 void			ft_putulong(unsigned long nb);
 size_t			ft_ulong_len(unsigned long nb);
+size_t			ft_ptr_len_base(size_t ptr, unsigned int base);
 #endif

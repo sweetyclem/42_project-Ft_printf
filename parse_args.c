@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/20 11:50:13 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/09 13:22:19 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 10:05:52 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,13 +73,13 @@ int			dispatch_conversion(va_list *va, char **str, t_format format)
 	if (ft_strchr("dDiuU", c))
 		char_written = print_int(va, format);
 	else if (c == 's' || c == 'S')
-		char_written = print_string(va);
+		char_written = print_string(va, format);
 	else if (c == 'c' || c == 'C')
-		char_written = print_char(va);
+		char_written = print_char(va, format);
 	else if (ft_strchr("oOuUxX", c))
 		char_written = print_int_base(va, format);
 	else if (c == 'p')
-		char_written = print_ptr(va);
+		char_written = print_ptr(va, format);
 	else
 	{
 		ft_putchar(c);
