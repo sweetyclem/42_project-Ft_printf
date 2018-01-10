@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 13:10:42 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/09 15:17:46 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 08:08:00 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	print_pound(t_format format, int nb)
 
 int	print_plus(t_format format, int nb)
 {
-	if (format.plus && nb >= 0)
+	if (format.plus && nb >= 0 && format.conversion != 'u')
 	{
 		ft_putchar('+');
 		return (1);
