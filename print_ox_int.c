@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 09:22:28 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 09:30:57 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 09:43:04 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,9 @@ int	print_x_int(va_list *va, int char_written, t_format format)
 	c = format.conversion;
 	nb = (unsigned long long int)va_arg(*va, unsigned long long int);
 	char_written += print_pound(format, nb);
-	if (c == 'x')
-		char_written += ft_print_u_l_hex(nb, "0123456789abcdef");
-	else if (c == 'X')
-		char_written += ft_print_u_l_hex(nb, "0123456789ABCDEF");
+	char_written += ft_hex_len(nb);
+	char_written += print_width(format, char_written);
+	ft_print_u_l_hex(nb, "0123456789abcdef");
 	return (char_written);
 }
 
@@ -59,9 +58,8 @@ int	print_cap_x_int(va_list *va, int char_written, t_format format)
 	c = format.conversion;
 	nb = (unsigned long long int)va_arg(*va, unsigned long long int);
 	char_written += print_pound(format, nb);
-	if (c == 'x')
-		char_written += ft_print_u_l_hex(nb, "0123456789abcdef");
-	else if (c == 'X')
-		char_written += ft_print_u_l_hex(nb, "0123456789ABCDEF");
+	char_written += ft_hex_len(nb);
+	char_written += print_width(format, char_written);
+	ft_print_u_l_hex(nb, "0123456789ABCDEF");
 	return (char_written);
 }
