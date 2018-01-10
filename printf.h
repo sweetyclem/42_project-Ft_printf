@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:24:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 14:11:47 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 14:41:53 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,5 @@ int				print_cap_x_int(va_list *va, int char_written, t_format format);
 int				print_char(va_list *va, t_format format);
 int				print_string(va_list *va, t_format format);
 int				print_ptr(va_list *va, t_format format);
+int				print_plain_char(int char_written, t_format format);
 #endif
