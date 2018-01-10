@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 09:22:28 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 09:43:04 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 11:12:29 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	print_o_int(va_list *va, int char_written, t_format format)
 	char_written += ft_uint_len_base(nb, 8);
 	char_written += print_pound(format, nb);
 	char_written += print_width(format, char_written);
+	char_written += print_zero_padding(format, char_written);
 	ft_put_longlong_base(nb, 8);
 	return (char_written);
 }
@@ -32,6 +33,7 @@ int	print_cap_o_int(va_list *va, int char_written, t_format format)
 	char_written += ft_uint_len_base(nb, 8);
 	char_written += print_pound(format, nb);
 	char_written += print_width(format, char_written);
+	char_written += print_zero_padding(format, char_written);
 	ft_putlong_base(nb, 8);
 	return (char_written);
 }
@@ -46,6 +48,7 @@ int	print_x_int(va_list *va, int char_written, t_format format)
 	char_written += print_pound(format, nb);
 	char_written += ft_hex_len(nb);
 	char_written += print_width(format, char_written);
+	char_written += print_zero_padding(format, char_written);
 	ft_print_u_l_hex(nb, "0123456789abcdef");
 	return (char_written);
 }
@@ -60,6 +63,7 @@ int	print_cap_x_int(va_list *va, int char_written, t_format format)
 	char_written += print_pound(format, nb);
 	char_written += ft_hex_len(nb);
 	char_written += print_width(format, char_written);
+	char_written += print_zero_padding(format, char_written);
 	ft_print_u_l_hex(nb, "0123456789ABCDEF");
 	return (char_written);
 }

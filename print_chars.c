@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 07:23:25 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 09:58:32 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 11:12:46 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int		print_string(va_list *va, t_format format)
 	{
 		char_written += (int)ft_strlen(str);
 		char_written += print_width(format, char_written);
+		char_written += print_zero_padding(format, char_written);
 		ft_putstr(str);
 	}
 	else
@@ -42,6 +43,7 @@ int		print_char(va_list *va, t_format format)
 	c = (int)va_arg(*va, int);
 	char_written = 1;
 	char_written += print_width(format, char_written);
+	char_written += print_zero_padding(format, char_written);
 	ft_putchar(c);
 	return (char_written);
 }
@@ -56,6 +58,7 @@ int		print_ptr(va_list *va, t_format format)
 	char_written = ft_ptr_len_base((size_t)ptr, 16);
 	char_written += 2;
 	char_written += print_width(format, char_written);
+	char_written += print_zero_padding(format, char_written);
 	ft_putstr("0x");
 	ft_print_ptr((size_t)ptr);
 	return (char_written);

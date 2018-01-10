@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 09:11:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 10:43:50 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 11:09:44 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 
 int	main(void)
 {
-	ft_putendl("\n\nprintf(\"{%5p}\", 0)");
+	ft_putendl("printf(\"{%010d}\", 42)");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("{%-15p}\n", 0));
+	ft_putnbrendl(ft_printf("{%010d}\n", 42));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("{%-15p}\n", 0));
+	ft_putnbrendl(printf("{%010d}\n", 42));
 
-	ft_putendl("\n\nprintf(\"{%10R}\")");
+	ft_putendl("\n\nprintf(\"{%010d}\", -42)");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("{%10R}\n"));
+	ft_putnbrendl(ft_printf("{%010d}\n", -42));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("{%10R}\n"));
+	ft_putnbrendl(printf("{%010d}\n", -42));
 }

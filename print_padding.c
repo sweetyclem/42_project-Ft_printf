@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_width.c                                      :+:      :+:    :+:   */
+/*   print_padding.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 08:25:32 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 10:04:41 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 11:18:08 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	print_width(t_format format, int char_written)
 
 	spaces_written = 0;
 	i = 0;
-	if (format.min_width > 0 && format.min_width > char_written)
+	if (format.min_width > 0 && format.min_width > char_written && !format.zero)
 	{
 		spaces_written = format.min_width - char_written;
 		i = spaces_written;
@@ -30,4 +30,24 @@ int	print_width(t_format format, int char_written)
 		}
 	}
 	return (spaces_written);
+}
+
+int	print_zero_padding(t_format format, int char_written)
+{
+	int	zeros_written;
+	int	i;
+
+	zeros_written = 0;
+	i = 0;
+	if (format.zero == 1 && (format.min_width > char_written))
+	{
+		zeros_written = format.min_width - char_written;
+		i = zeros_written;
+		while (i > 0)
+		{
+			ft_putchar('0');
+			i--;
+		}
+	}
+	return (zeros_written);
 }
