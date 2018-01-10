@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 13:10:42 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 08:08:00 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 08:14:37 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 
 int	print_space(t_format format, int nb)
 {
-	if (format.space && !ft_strchr("di", format.conversion))
-	{
-		ft_putchar(' ');
-		return (1);
-	}
-	else if (format.space && ft_strchr("di", format.conversion))
+	if (format.space && ft_strchr("di", format.conversion))
 	{
 		if (nb >= 0)
 		{
@@ -52,7 +47,7 @@ int	print_pound(t_format format, int nb)
 
 int	print_plus(t_format format, int nb)
 {
-	if (format.plus && nb >= 0 && format.conversion != 'u')
+	if (format.plus && nb >= 0 && !ft_strchr("uU", format.conversion))
 	{
 		ft_putchar('+');
 		return (1);
