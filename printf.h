@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:24:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 11:13:17 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 14:11:47 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int				print_space(t_format format, int nb);
 int				print_pound(t_format format, int nb);
 int				print_plus(t_format format, int nb);
 int				print_width(t_format format, int char_written);
+int				print_width_minus(t_format format, int char_written);
 int				print_zero_padding(t_format format, int char_written);
 
 /*
