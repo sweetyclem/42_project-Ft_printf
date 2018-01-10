@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 09:16:39 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 14:33:39 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 15:09:09 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,15 @@ int	print_d_int(va_list *va, int char_written, t_format format)
 
 int	print_u_int(va_list *va, int char_written, t_format format)
 {
-	unsigned long long int	nb;
+	unsigned int	nb;
 
-	nb = (unsigned long long int)va_arg(*va, long long int);
+	nb = (unsigned int)va_arg(*va, unsigned int);
 	char_written += ft_u_int_len(nb);
 	char_written += print_plus(format, nb);
 	char_written += print_width(format, char_written);
 	char_written += print_width(format, char_written);
 	char_written += print_zero_padding(format, char_written);
-	ft_put_ulonglong(nb);
+	ft_putuint(nb);
 	char_written += print_width_minus(format, char_written);
 	return (char_written);
 }
