@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 09:47:49 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 09:56:11 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 13:48:43 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdbool.h>
+# include <limits.h>
 # define MAX(N, M) ((N > M) ? N : M)
 # define MIN(N, M) ((N < M) ? N : M)
 

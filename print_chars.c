@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 07:23:25 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 11:12:46 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 11:29:17 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ int		print_ptr(va_list *va, t_format format)
 	char_written = ft_ptr_len_base((size_t)ptr, 16);
 	char_written += 2;
 	char_written += print_width(format, char_written);
-	char_written += print_zero_padding(format, char_written);
 	ft_putstr("0x");
+	char_written += print_zero_padding(format, char_written);
 	ft_print_ptr((size_t)ptr);
 	return (char_written);
 }

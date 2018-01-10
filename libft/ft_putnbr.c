@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 07:23:25 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/12/30 11:31:18 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 13:48:54 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putnbr(int nbr)
 {
 	unsigned int nb;
 
-	if (nbr < 0)
+	if (nbr < 0 && nbr != INT_MIN)
 	{
 		ft_putchar('-');
 		nbr *= -1;

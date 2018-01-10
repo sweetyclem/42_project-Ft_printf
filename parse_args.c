@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/20 11:50:13 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 10:57:29 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 13:55:17 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,28 +63,26 @@ t_format	save_format(char *full_str, int i)
 int			dispatch_conversion(va_list *va, char **str, t_format format)
 {
 	int		char_written;
-	char	c;
 	int		i;
 
 	i = 0;
 	char_written = 0;
-	c = (*str)[i];
 	format.conversion = (*str)[i];
-	if (ft_strchr("dDiuU", c))
+	if (ft_strchr("dDiuU", format.conversion))
 		char_written = print_int(va, format);
-	else if (c == 's' || c == 'S')
+	else if (ft_strchr("sS", format.conversion))
 		char_written = print_string(va, format);
-	else if (c == 'c' || c == 'C')
+	else if (ft_strchr("cC", format.conversion))
 		char_written = print_char(va, format);
-	else if (ft_strchr("oOuUxX", c))
+	else if (ft_strchr("oOuUxX", format.conversion))
 		char_written = print_int_base(va, format);
-	else if (c == 'p')
+	else if (format.conversion == 'p')
 		char_written = print_ptr(va, format);
 	else
 	{
 		char_written += 1;
 		char_written += print_width(format, char_written);
-		ft_putchar(c);
+		ft_putchar(format.conversion);
 	}
 	*str = &(*str)[i];
 	return (char_written);

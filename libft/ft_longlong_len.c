@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 07:23:25 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/09 09:07:44 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 13:49:59 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ size_t		ft_longlong_len(long long int nbr)
 	size_t		len;
 
 	len = 1;
+	if (nbr < 0)
+		len += 1;
 	while (nbr > 9 || nbr < -9)
 	{
 		nbr /= 10;
 		len++;
 	}
-	if (nbr < 0)
-		len++;
 	return (len);
 }
