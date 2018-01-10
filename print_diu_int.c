@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 09:16:39 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 15:09:09 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/10 15:38:21 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ int	print_cap_d_int(va_list *va, int char_written, t_format format)
 
 int	print_d_int(va_list *va, int char_written, t_format format)
 {
-	long long int	nb;
+	int	nb;
 
-	nb = (long long int)va_arg(*va, int);
+	nb = (int)va_arg(*va, int);
 	char_written += print_plus(format, nb);
 	char_written += print_space(format, nb);
-	char_written += ft_longlong_len(nb);
+	char_written += ft_longlen(nb);
 	char_written += print_width(format, char_written);
 	if (nb < 0)
 	{
