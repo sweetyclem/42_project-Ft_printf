@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putlong.c                                       :+:      :+:    :+:   */
+/*   ft_put_longlong.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/09 16:00:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/09 17:29:04 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/08 07:23:25 by cpirlot           #+#    #+#             */
+/*   Updated: 2018/01/09 09:06:44 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include <limits.h>
+#include "../../libft.h"
 
-void			ft_putlong(long nb)
+void			ft_put_longlong(long long int nb)
 {
-	if (nb < 0 && nb != LONG_MIN)
+	if (nb < 0)
 	{
 		ft_putchar('-');
-		ft_putchar('0' - (nb % 10));
-	}
-	else if (nb < 0 && nb == LONG_MIN)
-	{
-		ft_putchar('-');
-		ft_putlong(-(nb / 10));
+		ft_putnbr(-(nb / 10));
 		ft_putchar('0' - (nb % 10));
 	}
 	else if (nb < 10)
 		ft_putchar('0' + nb);
 	else
 	{
-		ft_putlong(nb / 10);
+		ft_putnbr(nb / 10);
 		ft_putchar('0' + (nb % 10));
 	}
 }

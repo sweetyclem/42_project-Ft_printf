@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_int_len.c                                       :+:      :+:    :+:   */
+/*   ft_put_u_longlong.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/03 07:13:01 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/03 07:13:40 by cpirlot          ###   ########.fr       */
+/*   Created: 2018/01/08 09:54:41 by cpirlot           #+#    #+#             */
+/*   Updated: 2018/01/08 09:55:57 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
-int	ft_int_len(int n)
+void			ft_put_u_longlong(unsigned long long int nb)
 {
-	int len;
-
-	len = 1;
-	if (n < 0)
+	if (nb < 10)
+		ft_putchar('0' + nb);
+	else
 	{
-		len++;
-		n = -n;
+		ft_putnbr(nb / 10);
+		ft_putchar('0' + (nb % 10));
 	}
-	while (n >= 10)
-	{
-		n = n / 10;
-		len++;
-	}
-	return (len);
 }

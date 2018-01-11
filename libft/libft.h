@@ -27,6 +27,9 @@ typedef	struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+/*
+** Str
+*/
 char			**ft_strsplit(const char *s, char c);
 char			*ft_strcat(char *s1, const char *s2);
 char			*ft_strchr(const char *s, int c);
@@ -62,14 +65,19 @@ void			ft_puterror(char *str);
 char			*ft_strrev(char *str);
 const char		*ft_skip_whitespace(const char *str);
 char			*ft_itoa(int n);
-
 void			ft_print_ptr(size_t nb);
 
+/*
+** Hex
+*/
 void			ft_print_hex(int nb);
 void			ft_print_hex_caps(int nb);
 void			ft_print_u_l_hex(unsigned long long int nb, const char *str);
 int				ft_hex_len(unsigned long long int nb);
 
+/*
+** Char
+*/
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);
 int				ft_isascii(int c);
@@ -82,6 +90,9 @@ void			ft_putchar(char c);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putnchar(char c, size_t n);
 
+/*
+** Mem
+*/
 void			ft_bzero(void *pointer, size_t length);
 int				ft_memcmp(const void *s1, const void *s2, size_t num);
 void			*ft_memccpy(void *dest, const void *src, int c, size_t n);
@@ -92,6 +103,9 @@ void			*ft_memalloc(size_t size);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memset(void *buffer, int c, size_t n);
 
+/*
+** Lst
+*/
 t_list			*ft_lstnew(const void *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
@@ -99,25 +113,28 @@ void			ft_lstadd(t_list **alst, t_list *n);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
+/*
+** Nbr
+*/
 int				ft_atoi(const char *str);
 void			ft_putnbr(int nbr);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_putnbrendl(int nbr);
 int				ft_abs(int a);
 size_t			ft_longlong_len(long long int nbr);
-void			ft_putlonglong(long long int nb);
-void			ft_put_ulonglong(unsigned long long int nb);
+void			ft_put_longlong(long long int nb);
+void			ft_put_u_longlong(unsigned long long int nb);
 int				ft_int_len(int n);
 int				ft_u_int_len(unsigned int n);
 void			ft_put_longlong_base(long long int nb, char base);
-void			ft_put_nbr_base(int nb, char base);
-size_t			ft_uint_len_base(unsigned long long int nbr, unsigned int base);
-void			ft_putlong(long nb);
-size_t			ft_longlen(long int nb);
-void			ft_putlong_base(long nb, char base);
-void			ft_putulong(unsigned long nb);
-size_t			ft_ulong_len(unsigned long nb);
+void			ft_putnbr_base(int nb, char base);
+size_t			ft_u_int_len_base(unsigned long long int nbr, unsigned int base);
+void			ft_put_long(long nb);
+size_t			ft_long_len(long int nb);
+void			ft_put_long_base(long nb, char base);
+void			ft_put_u_long(unsigned long nb);
+size_t			ft_u_long_len(unsigned long nb);
 size_t			ft_ptr_len_base(size_t ptr, unsigned int base);
-void			ft_putuint(unsigned int nb);
+void			ft_put_u_int(unsigned int nb);
 
 #endif

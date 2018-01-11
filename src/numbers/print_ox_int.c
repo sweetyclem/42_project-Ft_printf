@@ -17,7 +17,7 @@ int	print_o_int(va_list *va, int char_written, t_format format)
 	unsigned long long int	nb;
 
 	nb = (unsigned long long int)va_arg(*va, long long int);
-	char_written += ft_uint_len_base(nb, 8);
+	char_written += ft_u_int_len_base(nb, 8);
 	char_written += print_width(format, char_written);
 	char_written += print_zero_padding(format, char_written);
 	char_written += print_pound(format, nb);
@@ -31,11 +31,11 @@ int	print_cap_o_int(va_list *va, int char_written, t_format format)
 	unsigned long long int	nb;
 
 	nb = (unsigned long)va_arg(*va, long);
-	char_written += ft_uint_len_base(nb, 8);
+	char_written += ft_u_int_len_base(nb, 8);
 	char_written += print_pound(format, nb);
 	char_written += print_width(format, char_written);
 	char_written += print_zero_padding(format, char_written);
-	ft_putlong_base(nb, 8);
+	ft_put_long_base(nb, 8);
 	char_written += print_width_minus(format, char_written);
 	return (char_written);
 }

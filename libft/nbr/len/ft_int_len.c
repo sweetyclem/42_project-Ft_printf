@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_longlen.c                                       :+:      :+:    :+:   */
+/*   ft_int_len.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/09 16:01:53 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/09 16:02:15 by cpirlot          ###   ########.fr       */
+/*   Created: 2018/01/03 07:13:01 by cpirlot           #+#    #+#             */
+/*   Updated: 2018/01/03 07:13:40 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
-size_t		ft_longlen(long int nb)
+int	ft_int_len(int n)
 {
-	size_t		len;
+	int len;
 
 	len = 1;
-	while (nb > 9 || nb < -9)
+	if (n < 0)
 	{
-		nb /= 10;
+		len++;
+		n = -n;
+	}
+	while (n >= 10)
+	{
+		n = n / 10;
 		len++;
 	}
-	if (nb < 0)
-		len++;
 	return (len);
 }

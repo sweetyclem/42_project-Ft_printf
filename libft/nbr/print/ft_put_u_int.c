@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ulong_len.c                                     :+:      :+:    :+:   */
+/*   ft_put_u_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/09 17:30:11 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/09 17:33:57 by cpirlot          ###   ########.fr       */
+/*   Created: 2018/01/10 15:07:32 by cpirlot           #+#    #+#             */
+/*   Updated: 2018/01/10 15:09:36 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
-size_t		ft_ulong_len(unsigned long nb)
+void	ft_put_u_int(unsigned int nb)
 {
-	size_t		len;
-
-	len = 1;
-	while (nb >= 10)
+	if (nb < 10)
+		ft_putchar('0' + nb);
+	else
 	{
-		nb = nb / 10;
-		len++;
+		ft_put_u_int(nb / 10);
+		ft_putchar('0' + (nb % 10));
 	}
-	return (len);
 }

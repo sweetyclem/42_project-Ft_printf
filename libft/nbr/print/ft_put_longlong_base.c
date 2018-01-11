@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putulong.c                                      :+:      :+:    :+:   */
+/*   ft_put_longlong_base.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/09 17:29:20 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 07:51:26 by cpirlot          ###   ########.fr       */
+/*   Created: 2018/01/03 08:05:01 by cpirlot           #+#    #+#             */
+/*   Updated: 2018/01/09 09:06:52 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
-void			ft_putulong(unsigned long nb)
+void			ft_put_longlong_base(long long int nb, char base)
 {
-	if (nb < 10)
-		ft_putchar('0' + nb);
-	else
+	if (base > 1 && base < 10)
 	{
-		ft_putulong(nb / 10);
-		ft_putchar('0' + (nb % 10));
+		if (nb < 0)
+		{
+			ft_putchar('-');
+			ft_putnbr_base(-(nb / base), base);
+			ft_putchar('0' - (nb % base));
+		}
+		else if (nb < base)
+			ft_putchar('0' + nb);
+		else
+		{
+			ft_putnbr_base(nb / base, base);
+			ft_putchar('0' + nb % base);
+		}
 	}
+	else if (base == 1)
+		ft_putnchar('1', nb);
 }

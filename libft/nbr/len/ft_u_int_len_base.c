@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbrendl.c                                    :+:      :+:    :+:   */
+/*   ft_u_int_len_base.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 08:51:46 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/08 09:57:54 by cpirlot          ###   ########.fr       */
+/*   Created: 2018/01/03 08:17:12 by cpirlot           #+#    #+#             */
+/*   Updated: 2018/01/09 09:05:37 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
-void	ft_putnbrendl(int nbr)
+size_t		ft_u_int_len_base(unsigned long long int nbr, unsigned int base)
 {
-	unsigned int nb;
+	size_t		len;
 
-	if (nbr < 0)
+	len = 1;
+	while (nbr >= base)
 	{
-		ft_putchar('-');
-		nbr *= -1;
+		nbr /= base;
+		len++;
 	}
-	nb = nbr;
-	if (nb >= 10)
-		ft_putnbr(nb / 10);
-	ft_putchar(nb % 10 + '0');
-	ft_putchar('\n');
+	return (len);
 }

@@ -19,10 +19,10 @@ int	print_cap_d_int(va_list *va, int char_written, t_format format)
 	nb = (long)va_arg(*va, long);
 	char_written += print_plus(format, nb);
 	char_written += print_space(format, nb);
-	char_written += ft_longlen(nb);
+	char_written += ft_long_len(nb);
 	char_written += print_width(format, char_written);
 	char_written += print_zero_padding(format, char_written);
-	ft_putlong(nb);
+	ft_put_long(nb);
 	char_written += print_width_minus(format, char_written);
 	return (char_written);
 }
@@ -34,7 +34,7 @@ int	print_d_int(va_list *va, int char_written, t_format format)
 	nb = (int)va_arg(*va, int);
 	char_written += print_plus(format, nb);
 	char_written += print_space(format, nb);
-	char_written += ft_longlen(nb);
+	char_written += ft_long_len(nb);
 	char_written += print_width(format, char_written);
 	if (nb < 0)
 	{
@@ -57,7 +57,7 @@ int	print_u_int(va_list *va, int char_written, t_format format)
 	char_written += print_width(format, char_written);
 	char_written += print_width(format, char_written);
 	char_written += print_zero_padding(format, char_written);
-	ft_putuint(nb);
+	ft_put_u_int(nb);
 	char_written += print_width_minus(format, char_written);
 	return (char_written);
 }
@@ -69,10 +69,10 @@ int	print_cap_u_int(va_list *va, int char_written, t_format format)
 	nb = (long)va_arg(*va, long);
 	char_written += print_plus(format, nb);
 	char_written += print_space(format, nb);
-	char_written += ft_ulong_len(nb);
+	char_written += ft_u_long_len(nb);
 	char_written += print_width(format, char_written);
 	char_written += print_zero_padding(format, char_written);
-	ft_putulong(nb);
+	ft_put_u_long(nb);
 	char_written += print_width_minus(format, char_written);
 	return (char_written);
 }
