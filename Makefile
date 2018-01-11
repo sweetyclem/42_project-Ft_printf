@@ -19,7 +19,10 @@ SRC	= ft_printf.c print_chars.c print_numbers.c parse_args.c \
 get_width.c get_flags.c print_flags.c print_padding.c print_diu_int.c \
 print_ox_int.c get_length.c
 LIBFT = ./libft
-
+VPATH:=src/:${VPATH}
+VPATH:=src/format:${VPATH}
+VPATH:=src/numbers:${VPATH}
+VPATH:=src/chars:${VPATH}
 OBJ = $(SRC:.c=.o)
 
 # PROGRESS BAR
