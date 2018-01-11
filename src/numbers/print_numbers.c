@@ -22,11 +22,11 @@ int	print_int(va_list *va, t_format format)
 	if (c == 'd' || c == 'i')
 		char_written += print_d_int(va, char_written, format);
 	else if (c == 'D')
-		char_written += print_cap_d_int(va, char_written, format);
+		char_written += print_d_long(va, char_written, format);
 	else if (c == 'u')
 		char_written += print_u_int(va, char_written, format);
 	else if (c == 'U')
-		char_written += print_cap_u_int(va, char_written, format);
+		char_written += print_u_long(va, char_written, format);
 	return (char_written);
 }
 
@@ -40,10 +40,10 @@ int	print_int_base(va_list *va, t_format format)
 	if (c == 'o')
 		char_written += print_o_int(va, char_written, format);
 	else if (c == 'O')
-		char_written += print_cap_o_int(va, char_written, format);
+		char_written += print_o_long(va, char_written, format);
 	else if (c == 'x')
 		char_written += print_x_int(va, char_written, format);
 	else if (c == 'X')
-		char_written += print_cap_x_int(va, char_written, format);
+		char_written += print_x_long(va, char_written, format);
 	return (char_written);
 }

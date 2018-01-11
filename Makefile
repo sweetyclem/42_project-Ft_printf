@@ -14,10 +14,10 @@ NAME	=  libftprintf.a
 
 CC			= gcc
 FLAGS		= -Wall -Werror -Wextra
-INCLUDES	= printf.h
+INCLUDES	= printf.h struct.h
 SRC			= ft_printf.c print_chars.c print_numbers.c parse_args.c \
-			get_width.c get_flags.c print_flags.c print_padding.c print_diu_int.c \
-			print_ox_int.c get_length.c
+			get_width.c get_flags.c print_flags.c print_padding.c print_di.c \
+			print_o.c get_length.c print_u.c print_x.c
 LIBFT		= ./libft
 OBJDIR		= obj
 OBJ 		= $(addprefix $(OBJDIR)/,$(SRC:.c=.o))

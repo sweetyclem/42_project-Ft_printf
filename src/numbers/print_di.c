@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_diu_int.c                                    :+:      :+:    :+:   */
+/*   print_di.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,21 +11,6 @@
 /* ************************************************************************** */
 
 #include "../printf.h"
-
-int	print_cap_d_int(va_list *va, int char_written, t_format format)
-{
-	long	nb;
-
-	nb = (long)va_arg(*va, long);
-	char_written += print_plus(format, nb);
-	char_written += print_space(format, nb);
-	char_written += ft_long_len(nb);
-	char_written += print_width(format, char_written);
-	char_written += print_zero_padding(format, char_written);
-	ft_put_long(nb);
-	char_written += print_width_minus(format, char_written);
-	return (char_written);
-}
 
 int	print_d_int(va_list *va, int char_written, t_format format)
 {
@@ -47,32 +32,32 @@ int	print_d_int(va_list *va, int char_written, t_format format)
 	return (char_written);
 }
 
-int	print_u_int(va_list *va, int char_written, t_format format)
+int	print_d_long(va_list *va, int char_written, t_format format)
 {
-	unsigned int	nb;
-
-	nb = (unsigned int)va_arg(*va, unsigned int);
-	char_written += ft_u_int_len(nb);
-	char_written += print_plus(format, nb);
-	char_written += print_width(format, char_written);
-	char_written += print_width(format, char_written);
-	char_written += print_zero_padding(format, char_written);
-	ft_put_u_int(nb);
-	char_written += print_width_minus(format, char_written);
-	return (char_written);
-}
-
-int	print_cap_u_int(va_list *va, int char_written, t_format format)
-{
-	unsigned long long int	nb;
+	long	nb;
 
 	nb = (long)va_arg(*va, long);
 	char_written += print_plus(format, nb);
 	char_written += print_space(format, nb);
-	char_written += ft_u_long_len(nb);
+	char_written += ft_long_len(nb);
 	char_written += print_width(format, char_written);
 	char_written += print_zero_padding(format, char_written);
-	ft_put_u_long(nb);
+	ft_put_long(nb);
+	char_written += print_width_minus(format, char_written);
+	return (char_written);
+}
+
+int	print_d_longlong(va_list *va, int char_written, t_format format)
+{
+	long long	nb;
+
+	nb = (long long)va_arg(*va, long long);
+	char_written += print_plus(format, nb);
+	char_written += print_space(format, nb);
+	char_written += ft_longlong_len(nb);
+	char_written += print_width(format, char_written);
+	char_written += print_zero_padding(format, char_written);
+	ft_put_longlong(nb);
 	char_written += print_width_minus(format, char_written);
 	return (char_written);
 }

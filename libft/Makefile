@@ -25,7 +25,8 @@ SRC	= ft_atoi.c ft_bzero.c ft_isalpha.c ft_isalnum.c ft_isascii.c ft_isdigit.c f
 	ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c ft_lstnew.c ft_skip_whitespace.c ft_abs.c \
 	ft_put_longlong.c ft_longlong_len.c ft_putnstr.c ft_int_len.c ft_u_int_len.c ft_putnbr_base.c ft_put_longlong_base.c \
 	ft_putnchar.c ft_u_int_len_base.c ft_print_hex.c ft_print_ptr.c ft_print_u_l_hex.c ft_put_u_longlong.c ft_put_long.c \
-	ft_long_len.c ft_put_long_base.c ft_put_u_long.c ft_u_long_len.c ft_hex_len.c ft_ptr_len_base.c ft_put_u_int.c
+	ft_long_len.c ft_put_long_base.c ft_put_u_long.c ft_u_long_len.c ft_hex_len.c ft_ptr_len_base.c ft_put_u_int.c \
+	ft_u_longlong_len.c
 OBJDIR = obj
 OBJ	= $(addprefix $(OBJDIR)/,$(SRC:.c=.o))
 VPATH:=char/:${VPATH}
