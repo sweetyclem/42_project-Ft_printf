@@ -12,18 +12,19 @@
 
 NAME	=  libftprintf.a
 
-CC		= gcc
-FLAGS	= -Wall -Werror -Wextra
-INCLUDES = printf.h
-SRC	= ft_printf.c print_chars.c print_numbers.c parse_args.c \
-get_width.c get_flags.c print_flags.c print_padding.c print_diu_int.c \
-print_ox_int.c get_length.c
-LIBFT = ./libft
+CC			= gcc
+FLAGS		= -Wall -Werror -Wextra
+INCLUDES	= printf.h
+SRC			= ft_printf.c print_chars.c print_numbers.c parse_args.c \
+			get_width.c get_flags.c print_flags.c print_padding.c print_diu_int.c \
+			print_ox_int.c get_length.c
+LIBFT		= ./libft
+OBJDIR		= obj
+OBJ 		= $(addprefix $(OBJDIR)/,$(SRC:.c=.o))
 VPATH:=src/:${VPATH}
 VPATH:=src/format:${VPATH}
 VPATH:=src/numbers:${VPATH}
 VPATH:=src/chars:${VPATH}
-OBJ = $(SRC:.c=.o)
 
 # PROGRESS BAR
 T = $(words $(OBJ))
@@ -50,12 +51,13 @@ $(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
 	@echo "$(_CYAN)Merged libft.a into libftprintf.a$(_END)"
 
-%.o: %.c
+$(OBJDIR)/%.o: %.c
+	@mkdir -p obj
 	@printf "%-60b\r" "$(ECHO) $(_CYAN) Compiling $@ $(_END)"
-	@$(CC) $(FLAGS) -c $<
+	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	@$(RM) -f $(OBJ)
+	@$(RM) -rf $(OBJDIR)
 	@make clean -C $(LIBFT)
 	@echo "clean printf: $(_CYAN)done$(_END)"
 
