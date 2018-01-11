@@ -26,8 +26,14 @@ SRC	= ft_atoi.c ft_bzero.c ft_isalpha.c ft_isalnum.c ft_isascii.c ft_isdigit.c f
 	ft_putlonglong.c ft_longlong_len.c ft_putnstr.c ft_int_len.c ft_u_int_len.c ft_put_nbr_base.c ft_put_longlong_base.c \
 	ft_putnchar.c ft_uint_len_base.c ft_print_hex.c ft_print_ptr.c ft_print_u_l_hex.c ft_put_ulonglong.c ft_putlong.c \
 	ft_longlen.c ft_putlong_base.c ft_putulong.c ft_ulong_len.c ft_hex_len.c ft_ptr_len_base.c ft_putuint.c
-
-OBJ = $(SRC:.c=.o)
+OBJDIR = obj
+OBJ	= $(addprefix $(OBJDIR)/,$(SRC:.c=.o))
+VPATH:=char/:${VPATH}
+VPATH:=hex/:${VPATH}
+VPATH:=lst/:${VPATH}
+VPATH:=mem/:${VPATH}
+VPATH:=nbr/:${VPATH}
+VPATH:=str/:${VPATH}
 
 # PROGRESS BAR
 T = $(words $(OBJ))
@@ -52,9 +58,10 @@ $(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
 	@echo "\n$(NAME) compilation : $(_CYAN)done$(_END)"
 
-%.o: %.c
+$(OBJDIR)/%.o: %.c
+	@mkdir -p obj
 	@printf "%-60b\r" "$(ECHO) $(_CYAN) Compiling $@ $(_END)"
-	@$(CC) $(FLAGS) -c $<
+	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	@$(RM) -f $(OBJ)
