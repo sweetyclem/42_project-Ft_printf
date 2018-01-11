@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 07:23:25 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/09 09:06:04 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/08 09:19:43 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/09 15:17:55 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
-void	ft_putnstr(const char *str, size_t n)
+int	ft_strnequ(const char *s1, const char *s2, size_t n)
 {
-	size_t		len;
-
-	if (str != NULL)
-	{
-		len = ft_strlen(str);
-		write(1, str, MIN(len, n));
-	}
+	if (!s1 || !s2)
+		return (0);
+	if (ft_strncmp(s1, s2, n) == 0)
+		return (1);
+	return (0);
 }

@@ -36,6 +36,8 @@ VPATH:=nbr/:${VPATH}
 VPATH:=nbr/print/:${VPATH}
 VPATH:=nbr/len/:${VPATH}
 VPATH:=str/:${VPATH}
+VPATH:=str/print/:${VPATH}
+VPATH:=str/n_func/:${VPATH}
 
 # PROGRESS BAR
 T = $(words $(OBJ))

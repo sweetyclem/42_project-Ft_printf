@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_puterror.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 07:24:47 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 16:49:37 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/08 07:22:09 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/08 07:22:12 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
-void	ft_putstr(const char *str)
+void	ft_puterror(char *str)
 {
-	if (!str)
-		return ;
-	write(1, str, ft_strlen(str));
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		write(2, &str[i], 1);
+		i++;
+	}
 }

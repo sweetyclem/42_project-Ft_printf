@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 07:19:50 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/14 10:38:12 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/08 09:19:12 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/08 09:19:21 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
-void	ft_putendl_fd(const char *s, int fd)
+char	*ft_strncpy(char *s1, const char *s2, size_t n)
 {
-	int i;
+	size_t	i;
 
-	if (!s)
-		return ;
 	i = 0;
-	while (s[i])
+	ft_memset(s1, '\0', n);
+	while (s2[i] != '\0' && n > 0)
 	{
-		ft_putchar_fd(s[i], fd);
+		s1[i] = s2[i];
 		i++;
+		n--;
 	}
-	ft_putchar_fd('\n', fd);
+	return (s1);
 }

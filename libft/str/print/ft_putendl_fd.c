@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 09:17:39 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/08 09:18:00 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/08 07:19:50 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/14 10:38:12 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t max)
+void	ft_putendl_fd(const char *s, int fd)
 {
-	size_t	i;
-	size_t	j;
+	int i;
 
+	if (!s)
+		return ;
 	i = 0;
-	j = ft_strlen(s1);
-	while (s2[i] && i < max)
+	while (s[i])
 	{
-		s1[j] = s2[i];
-		j++;
+		ft_putchar_fd(s[i], fd);
 		i++;
 	}
-	s1[j] = '\0';
-	return (s1);
+	ft_putchar_fd('\n', fd);
 }

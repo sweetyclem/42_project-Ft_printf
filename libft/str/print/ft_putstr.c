@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 09:18:18 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/08 09:18:47 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/08 07:24:47 by cpirlot           #+#    #+#             */
+/*   Updated: 2018/01/10 16:49:37 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t max)
+void	ft_putstr(const char *str)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < max - 1 && s1[i] != '\0' &&
-		(unsigned char)s1[i] == (unsigned char)s2[i])
-	{
-		i++;
-	}
-	if (max)
-		return (unsigned char)s1[i] - (unsigned char)s2[i];
-	return (0);
+	if (!str)
+		return ;
+	write(1, str, ft_strlen(str));
 }
