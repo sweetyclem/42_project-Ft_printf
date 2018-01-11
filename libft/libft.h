@@ -17,8 +17,8 @@
 # include <string.h>
 # include <stdbool.h>
 # include <limits.h>
-# define MAX(N, M) ((N > M) ? N : M)
-# define MIN(N, M) ((N < M) ? N : M)
+# define MAX(a, b) ((a > b) ? a : b)
+# define MIN(a, b) ((a < b) ? a : b)
 
 char			**ft_strsplit(const char *s, char c);
 char			*ft_itoa(int n);
