@@ -12,6 +12,18 @@
 
 #include "../printf.h"
 
+int	print_d(va_list *va, int char_written, t_format format)
+{
+	char	c;
+
+	c = format.conversion;
+	if (c == 'd' || c == 'i')
+		char_written += print_d_int(va, char_written, format);
+	if (c == 'D')
+		char_written += print_d_long(va, char_written, format);
+	return (char_written);
+}
+
 int	print_d_int(va_list *va, int char_written, t_format format)
 {
 	int	nb;

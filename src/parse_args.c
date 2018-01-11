@@ -72,14 +72,12 @@ int			dispatch_conversion(va_list *va, char **str, t_format format)
 	i = 0;
 	char_written = 0;
 	format.conversion = (*str)[i];
-	if (ft_strchr("dDiuU", format.conversion))
-		char_written = print_int(va, format);
+	if (ft_strchr("dDiuUoOuUxX", format.conversion))
+		char_written = print_numbers(va, format);
 	else if (ft_strchr("sS", format.conversion))
 		char_written = print_string(va, format);
 	else if (ft_strchr("cC", format.conversion))
 		char_written = print_char(va, format);
-	else if (ft_strchr("oOuUxX", format.conversion))
-		char_written = print_int_base(va, format);
 	else if (format.conversion == 'p')
 		char_written = print_ptr(va, format);
 	else

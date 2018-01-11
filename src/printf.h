@@ -52,11 +52,12 @@ int			print_zero_padding(t_format format, int char_written);
 /*
 ** Printing for conversions d i D u U
 */
-int			print_int(va_list *va, t_format format);
-int			print_int_base(va_list *va, t_format format);
+int			print_numbers(va_list *va, t_format format);
+int			print_d(va_list *va, int char_written, t_format format);
 int			print_d_int(va_list *va, int char_written, t_format format);
 int			print_d_long(va_list *va, int char_written, t_format format);
 int			print_d_longlong(va_list *va, int char_written, t_format format);
+int			print_u(va_list *va, int char_written, t_format format);
 int			print_u_int(va_list *va, int char_written, t_format format);
 int			print_u_long(va_list *va, int char_written, t_format format);
 int			print_u_longlong(va_list *va, int char_written, t_format format);
@@ -64,9 +65,11 @@ int			print_u_longlong(va_list *va, int char_written, t_format format);
 /*
 ** Printing for conversions o O x X
 */
+int			print_o(va_list *va, int char_written, t_format format);
 int			print_o_int(va_list *va, int char_written, t_format format);
 int			print_o_long(va_list *va, int char_written, t_format format);
 int			print_o_longlong(va_list *va, int char_written, t_format format);
+int			print_x(va_list *va, int char_written, t_format format);
 int			print_x_int(va_list *va, int char_written, t_format format);
 int			print_x_long(va_list *va, int char_written, t_format format);
 int			print_x_longlong(va_list *va, int char_written, t_format format);
