@@ -12,25 +12,6 @@
 
 #include "../printf.h"
 
-int	print_o(va_list *va, int char_written, t_format format)
-{
-	char	c;
-
-	c = format.conversion;
-	if (c == 'o')
-	{
-		if (!format.l)
-			char_written += print_o_int(va, char_written, format);
-		else if (format.l == 1)
-			char_written += print_o_long(va, char_written, format);
-		else if (format.l == 2)
-			char_written += print_o_longlong(va, char_written, format);
-	}
-	else if (c == 'O')
-		char_written += print_o_long(va, char_written, format);
-	return (char_written);
-}
-
 int	print_o_int(va_list *va, int char_written, t_format format)
 {
 	unsigned long long int	nb;
