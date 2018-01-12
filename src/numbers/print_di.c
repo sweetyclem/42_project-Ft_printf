@@ -18,8 +18,15 @@ int	print_d(va_list *va, int char_written, t_format format)
 
 	c = format.conversion;
 	if (c == 'd' || c == 'i')
-		char_written += print_d_int(va, char_written, format);
-	if (c == 'D')
+	{
+		if (!format.l)
+			char_written += print_d_int(va, char_written, format);
+		else if (format.l == 1)
+			char_written += print_d_long(va, char_written, format);
+		else if (format.l == 2)
+			char_written += print_d_longlong(va, char_written, format);
+	}
+	else if (c == 'D')
 		char_written += print_d_long(va, char_written, format);
 	return (char_written);
 }
