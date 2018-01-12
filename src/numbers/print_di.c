@@ -12,22 +12,23 @@
 
 #include "../printf.h"
 
-int	print_d(va_list *va, int char_written, t_format format)
+int	print_d_short(va_list *va, int char_written, t_format format)
 {
-	char	c;
+	short	nb;
 
-	c = format.conversion;
-	if (c == 'd' || c == 'i')
+	nb = (short)va_arg(*va, int);
+	char_written += print_plus(format, nb);
+	char_written += print_space(format, nb);
+	char_written += ft_short_len(nb);
+	char_written += print_width(format, char_written);
+	if (nb < 0)
 	{
-		if (!format.l)
-			char_written += print_d_int(va, char_written, format);
-		else if (format.l == 1)
-			char_written += print_d_long(va, char_written, format);
-		else if (format.l == 2)
-			char_written += print_d_longlong(va, char_written, format);
+		ft_putchar('-');
+		nb = ft_abs(nb);
 	}
-	else if (c == 'D')
-		char_written += print_d_long(va, char_written, format);
+	char_written += print_zero_padding(format, char_written);
+	ft_put_short(nb);
+	char_written += print_width_minus(format, char_written);
 	return (char_written);
 }
 

@@ -12,35 +12,16 @@
 
 #include "../printf.h"
 
-int	print_o(va_list *va, int char_written, t_format format)
-{
-	char	c;
-
-	c = format.conversion;
-	if (c == 'o')
-	{
-		if (!format.l)
-			char_written += print_o_int(va, char_written, format);
-		else if (format.l == 1)
-			char_written += print_o_long(va, char_written, format);
-		else if (format.l == 2)
-			char_written += print_o_longlong(va, char_written, format);
-	}
-	else if (c == 'O')
-		char_written += print_o_long(va, char_written, format);
-	return (char_written);
-}
-
 int	print_o_int(va_list *va, int char_written, t_format format)
 {
-	unsigned long long int	nb;
+	unsigned int	nb;
 
-	nb = (unsigned long long int)va_arg(*va, long long int);
+	nb = (unsigned int)va_arg(*va, unsigned int);
 	char_written += ft_u_int_len_base(nb, 8);
 	char_written += print_width(format, char_written);
 	char_written += print_zero_padding(format, char_written);
 	char_written += print_pound(format, nb);
-	ft_put_longlong_base(nb, 8);
+	ft_putnbr_base(nb, 8);
 	char_written += print_width_minus(format, char_written);
 	return (char_written);
 }
