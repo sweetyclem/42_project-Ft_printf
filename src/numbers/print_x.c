@@ -12,6 +12,25 @@
 
 #include "../printf.h"
 
+int	print_x(va_list *va, int char_written, t_format format)
+{
+	char	c;
+
+	c = format.conversion;
+	if (c == 'x')
+	{
+		if (!format.l)
+			char_written += print_x_int(va, char_written, format);
+		else if (format.l == 1)
+			char_written += print_x_long(va, char_written, format);
+		else if (format.l == 2)
+			char_written += print_x_longlong(va, char_written, format);
+	}
+	else if (c == 'X')
+		char_written += print_x_long(va, char_written, format);
+	return (char_written);
+}
+
 int	print_x_int(va_list *va, int char_written, t_format format)
 {
 	unsigned long long int	nb;

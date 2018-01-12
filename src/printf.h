@@ -54,7 +54,6 @@ int			print_zero_padding(t_format format, int char_written);
 */
 int			print_numbers(va_list *va, t_format format);
 int			print_d(va_list *va, int char_written, t_format format);
-int	        print_d_short(va_list *va, int char_written, t_format format);
 int			print_d_int(va_list *va, int char_written, t_format format);
 int			print_d_long(va_list *va, int char_written, t_format format);
 int			print_d_longlong(va_list *va, int char_written, t_format format);
