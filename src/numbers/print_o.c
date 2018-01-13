@@ -35,7 +35,7 @@ int	print_o_long(va_list *va, int char_written, t_format format)
 	char_written += print_pound(format, nb);
 	char_written += print_width(format, char_written);
 	char_written += print_zero_padding(format, char_written);
-	ft_put_long_base(nb, 8);
+	ft_put_u_long_base(nb, 8);
 	char_written += print_width_minus(format, char_written);
 	return (char_written);
 }

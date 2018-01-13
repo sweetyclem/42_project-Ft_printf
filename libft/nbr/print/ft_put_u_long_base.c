@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_u_long.c                                    :+:      :+:    :+:   */
+/*   ft_put_u_long_base.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,13 +12,13 @@
 
 #include "../../libft.h"
 
-void	ft_put_u_long(unsigned long nb)
+void    ft_put_u_long_base(unsigned long nb, char base)
 {
-	if (nb < 10)
+	if (nb < (unsigned long)base)
 		ft_putchar('0' + nb);
 	else
 	{
-		ft_put_u_long(nb / 10);
-		ft_putchar('0' + (nb % 10));
+		ft_put_u_long_base(nb / (unsigned long)base, base);
+		ft_putchar('0' + (nb % (unsigned long)base));
 	}
 }

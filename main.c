@@ -16,21 +16,21 @@
 
 int	main(void)
 {
-	ft_putendl("printf(\"%ld\", (long)INT_MAX + 1))");
+	ft_putendl("printf(\"%lX\", ULONG_MAX)");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%ld\n", (long)INT_MAX + 1));
+	ft_putnbrendl(ft_printf("%lX\n", ULONG_MAX));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%ld\n", (long)INT_MAX + 1));
+	ft_putnbrendl(printf("%lX\n", ULONG_MAX));
 
-	ft_putendl("\n\nprintf(\"%ld\", LONG_MAX)");
+	ft_putendl("\n\nprintf(\"%lo\", ULONG_MAX)");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%ld\n", LONG_MAX));
+	ft_putnbrendl(ft_printf("%lo\n", ULONG_MAX));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%ld\n", LONG_MAX));
+	ft_putnbrendl(printf("%lo\n", ULONG_MAX));
 	
-	ft_putendl("\n\nprintf(\"%lld\", -2147483648)");
+	ft_putendl("\n\nprintf(\"%lx\", ULONG_MAX)");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%lld\n", -2147483648));
+	ft_putnbrendl(ft_printf("%lx\n", ULONG_MAX));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%lld\n", -2147483648));
+	ft_putnbrendl(printf("%lx\n", ULONG_MAX));
 }
