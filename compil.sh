@@ -1,0 +1,1 @@
+gcc -I include -o a.out main.c -L. -lftprintf
