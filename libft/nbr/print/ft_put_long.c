@@ -14,21 +14,16 @@
 
 void	ft_put_long(long nbr)
 {
-	int	overflow;
+	unsigned long nb;
 
-	overflow = 0;
 	if (nbr < 0)
 	{
 		ft_putchar('-');
-		if (nbr == LONG_MIN)
-		{
-			nbr = LONG_MAX;
-			overflow = 1;
-		}
-		else
+		if (nbr != LONG_MIN)
 			nbr *= -1;
 	}
-	if (nbr >= 10)
-		ft_put_long(nbr / 10);
-	ft_putchar(nbr % 10 + '0' + overflow);
+	nb = nbr;
+	if (nb >= 10)
+		ft_put_long(nb / 10);
+	ft_putchar(nb % 10 + '0');
 }
