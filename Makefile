@@ -56,6 +56,9 @@ $(OBJDIR)/%.o: %.c
 	@printf "%-60b\r" "$(ECHO) $(_CYAN) Compiling $@ $(_END)"
 	@$(CC) $(FLAGS) -c $< -o $@
 
+dev: fclean $(NAME)
+	gcc -I include -o a.out main.c -L. -lftprintf
+
 clean:
 	@$(RM) -rf $(OBJDIR)
 	@make clean -C $(LIBFT)
