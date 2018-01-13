@@ -45,6 +45,17 @@ int	print_pound(t_format format, int nb)
 	return (0);
 }
 
+int	pound_length(t_format format, int nb)
+{
+	if (format.pound && ft_strchr("oO", format.conversion) && nb != 0)
+		return (1);
+	else if (format.pound && format.conversion == 'x' && nb != 0)
+		return (2);
+	else if (format.pound && format.conversion == 'X' && nb != 0)
+		return (2);
+	return (0);
+}
+
 int	print_plus(t_format format, int nb)
 {
 	if (format.plus && nb >= 0 && !ft_strchr("uU", format.conversion))

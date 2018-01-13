@@ -16,17 +16,23 @@
 
 int	main(void)
 {
-	ft_putendl("printf(\"%X\", -42)");
+	ft_putendl("printf(\"%#8x\", 42)");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%X\n", -42));
+	ft_putnbrendl(ft_printf("%#8x\n", 42));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%X\n", -42));
+	ft_putnbrendl(printf("%#8x\n", 42));
 
-	ft_putendl("\n\nprintf(\"%X\", 4294967296)");
+	ft_putendl("printf(\"%8x\", 42)");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%X\n", 4294967296));
+	ft_putnbrendl(ft_printf("%8x\n", 42));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%X\n", 4294967296));
+	ft_putnbrendl(printf("%8x\n", 42));
+
+	ft_putendl("\n\nprintf(\"%#08x\", 42)");
+	ft_putendl("mienne : ");
+	ft_putnbrendl(ft_printf("%#08x\n", 42));
+	ft_putendl("vraie printf : ");
+	ft_putnbrendl(printf("%#08x\n", 42));
 
 	ft_putendl("\n\nprintf(\"%lx\", 4294967296)");
 	ft_putendl("mienne : ");

@@ -44,6 +44,7 @@ int			get_length(char *str, char c);
 */
 int			print_space(t_format format, int nb);
 int			print_pound(t_format format, int nb);
+int	        pound_length(t_format format, int nb);
 int			print_plus(t_format format, int nb);
 int			print_width(t_format format, int char_written);
 int			print_width_minus(t_format format, int char_written);
