@@ -129,7 +129,7 @@ int				ft_u_int_len(unsigned int n);
 void			ft_put_longlong_base(long long int nb, char base);
 void			ft_putnbr_base(int nb, char base);
 size_t			ft_u_int_len_base(unsigned long long int nbr, unsigned int base);
-void			ft_put_long(long nb);
+void			ft_put_long(long nbr);
 size_t			ft_long_len(long int nb);
 void			ft_put_long_base(long nb, char base);
 void			ft_put_u_long(unsigned long nb);

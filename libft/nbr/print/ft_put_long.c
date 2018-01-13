@@ -12,24 +12,23 @@
 
 #include "../../libft.h"
 
-void			ft_put_long(long nb)
+void	ft_put_long(long nbr)
 {
-	if (nb < 0 && nb != LONG_MIN)
+	int	overflow;
+
+	overflow = 0;
+	if (nbr < 0)
 	{
 		ft_putchar('-');
-		ft_putchar('0' - (nb % 10));
+		if (nbr == LONG_MIN)
+		{
+			nbr = LONG_MAX;
+			overflow = 1;
+		}
+		else
+			nbr *= -1;
 	}
-	else if (nb < 0 && nb == LONG_MIN)
-	{
-		ft_putchar('-');
-		ft_put_long(-(nb / 10));
-		ft_putchar('0' - (nb % 10));
-	}
-	else if (nb < 10)
-		ft_putchar('0' + nb);
-	else
-	{
-		ft_put_long(nb / 10);
-		ft_putchar('0' + (nb % 10));
-	}
+	if (nbr >= 10)
+		ft_put_long(nbr / 10);
+	ft_putchar(nbr % 10 + '0' + overflow);
 }
