@@ -33,77 +33,80 @@ int	print_numbers(va_list *va, t_format format)
 
 int	print_d(va_list *va, int char_written, t_format format)
 {
-	char	c;
+	char		c;
+	long long	nb;
 
 	c = format.conversion;
-	if (c == 'd' || c == 'i')
+	if (c == 'd' || c == 'i' || c == 'D')
 	{
-		if (!format.l)
-			char_written += print_d_int(va, char_written, format);
-		else if (format.l == 1)
-			char_written += print_d_long(va, char_written, format);
+		if (format.l == 1 || c == 'D')
+			nb = (long long)va_arg(*va, long);
 		else if (format.l == 2)
-			char_written += print_d_longlong(va, char_written, format);
+			nb = (long long)va_arg(*va, long long);
+		else
+			nb = (long long)va_arg(*va, int);
+		char_written += print_d_longlong(char_written, format, nb);
 	}
-	else if (c == 'D')
-		char_written += print_d_long(va, char_written, format);
 	return (char_written);
 }
 
 
 int	print_o(va_list *va, int char_written, t_format format)
 {
-	char	c;
+	char				c;
+	long long			nb;
+	unsigned long long	u_nb;
 
 	c = format.conversion;
-	if (c == 'o')
+	if (format.l == 1 || c == 'O')
 	{
-		if (!format.l)
-			char_written += print_o_int(va, char_written, format);
-		else if (format.l == 1)
-			char_written += print_o_long(va, char_written, format);
-		else if (format.l == 2)
-			char_written += print_o_longlong(va, char_written, format);
+		u_nb = (unsigned long long)va_arg(*va, unsigned long);
+		char_written += print_u_o_longlong(char_written, format, u_nb);
 	}
-	else if (c == 'O')
-		char_written += print_o_long(va, char_written, format);
+	else
+	{			
+		if (format.l == 2)
+			nb = (long long)va_arg(*va, long long);
+		else
+			nb = (long long)va_arg(*va, int);
+		char_written += print_o_longlong(char_written, format, nb);
+	}
 	return (char_written);
 }
 
 int	print_u(va_list *va, int char_written, t_format format)
 {
-	char	c;
+	char		c;
+	unsigned long long	nb;
 
 	c = format.conversion;
-	if (c == 'u')
+	if (c == 'u' || c == 'U')
 	{
-		if (!format.l)
-			char_written += print_u_int(va, char_written, format);
-		else if (format.l == 1)
-			char_written += print_u_long(va, char_written, format);
+		if (format.l == 1 || c == 'U')
+			nb = (unsigned long long)va_arg(*va, unsigned long);
 		else if (format.l == 2)
-			char_written += print_u_longlong(va, char_written, format);
+			nb = (unsigned long long)va_arg(*va, unsigned long long);
+		else
+			nb = (unsigned long long)va_arg(*va, unsigned int);
+		char_written += print_u_longlong(char_written, format, nb);
 	}
-	else if (c == 'U')
-		char_written += print_u_long(va, char_written, format);
 	return (char_written);
 }
 
 int	print_x(va_list *va, int char_written, t_format format)
 {
-	char	c;
+	char		c;
+	unsigned long long	nb;
 
 	c = format.conversion;
-	if (c == 'x')
-	{
-		if (!format.l)
-			char_written += print_x_int(va, char_written, format);
-		else if (format.l == 1)
-			char_written += print_x_long(va, char_written, format);
-		else if (format.l == 2)
-			char_written += print_x_longlong(va, char_written, format);
-	}
-	else if (c == 'X')
-		char_written += print_x_long(va, char_written, format);
+
+	if (format.l == 1 || c == 'X')
+		nb = (unsigned long long)va_arg(*va, unsigned long);
+	else if (format.l == 2)
+		nb = (unsigned long long)va_arg(*va, unsigned long long);
+	else
+		nb = (unsigned long long)va_arg(*va, unsigned int);
+	char_written += print_x_longlong(char_written, format, nb);
+
 	return (char_written);
 }

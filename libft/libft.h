@@ -66,13 +66,13 @@ char			*ft_strrev(char *str);
 const char		*ft_skip_whitespace(const char *str);
 char			*ft_itoa(int n);
 void			ft_print_ptr(size_t nb);
+size_t			ft_ptr_len_base(size_t ptr, unsigned int base);
 
 /*
 ** Hex
 */
-void			ft_print_hex(int nb);
-void			ft_print_hex_caps(int nb);
-void			ft_print_u_l_hex(unsigned long long int nb, const char *str);
+void			ft_print_u_hex(unsigned long long int nb, const char *str);
+void			ft_print_hex(long long int nb, const char *str);
 int				ft_hex_len(unsigned long long int nb);
 
 /*
@@ -117,26 +117,15 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 ** Nbr
 */
 int				ft_atoi(const char *str);
+int				ft_abs(int a);
+size_t			ft_longlong_len(long long int nbr);
+size_t			ft_len_base(long long int nb, char base);
+size_t			ft_u_longlong_len(unsigned long long nb);
+size_t			ft_u_len_base(unsigned long long nb, char base);
 void			ft_putnbr(int nbr);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_putnbrendl(int nbr);
-int				ft_abs(int a);
-size_t			ft_longlong_len(long long int nbr);
-void			ft_put_longlong(long long int nb);
-void			ft_put_u_longlong(unsigned long long int nb);
-int				ft_int_len(int n);
-int				ft_u_int_len(unsigned int n);
-void			ft_put_longlong_base(long long int nb, char base);
-void			ft_putnbr_base(int nb, char base);
-size_t			ft_u_int_len_base(unsigned long long int nbr, unsigned int base);
-void			ft_put_long(long nbr);
-size_t			ft_long_len(long int nb);
-void			ft_put_long_base(long nbr, char base);
-void   			ft_put_u_long_base(unsigned long nb, char base);
-void			ft_put_u_long(unsigned long nb);
-size_t			ft_u_long_len(unsigned long nb);
-size_t			ft_u_longlong_len(unsigned long long nb);
-size_t			ft_ptr_len_base(size_t ptr, unsigned int base);
-void			ft_put_u_int(unsigned int nb);
+void			ft_put_longlong_base(long long int nbr, char base);
+void			ft_put_u_longlong_base(unsigned long long int nb, char base);
 
 #endif

@@ -12,44 +12,24 @@
 
 #include "../printf.h"
 
-int	print_o_int(va_list *va, int char_written, t_format format)
+int	print_o_longlong(int char_written, t_format format, long long nb)
 {
-	unsigned long long int	nb;
-
-	nb = (unsigned long long int)va_arg(*va, long long int);
-	char_written += ft_u_int_len_base(nb, 8);
+	char_written += ft_len_base(nb, 8);
+	char_written += print_pound(format, nb);
 	char_written += print_width(format, char_written);
 	char_written += print_zero_padding(format, char_written);
-	char_written += print_pound(format, nb);
 	ft_put_longlong_base(nb, 8);
 	char_written += print_width_minus(format, char_written);
 	return (char_written);
 }
 
-int	print_o_long(va_list *va, int char_written, t_format format)
+int	print_u_o_longlong(int char_written, t_format format, unsigned long long nb)
 {
-	unsigned long	nb;
-
-	nb = (unsigned long)va_arg(*va, long);
-	char_written += ft_u_int_len_base(nb, 8);
+	char_written += ft_u_len_base(nb, 8);
 	char_written += print_pound(format, nb);
 	char_written += print_width(format, char_written);
 	char_written += print_zero_padding(format, char_written);
-	ft_put_u_long_base(nb, 8);
-	char_written += print_width_minus(format, char_written);
-	return (char_written);
-}
-
-int	print_o_longlong(va_list *va, int char_written, t_format format)
-{
-	unsigned long long int	nb;
-
-	nb = (unsigned long long)va_arg(*va, long long);
-	char_written += ft_u_int_len_base(nb, 8);
-	char_written += print_pound(format, nb);
-	char_written += print_width(format, char_written);
-	char_written += print_zero_padding(format, char_written);
-	ft_put_longlong_base(nb, 8);
+	ft_put_u_longlong_base(nb, 8);
 	char_written += print_width_minus(format, char_written);
 	return (char_written);
 }

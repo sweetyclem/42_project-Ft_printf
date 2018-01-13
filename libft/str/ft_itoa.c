@@ -17,10 +17,10 @@ char			*ft_itoa(int n)
 	char	*s;
 	int		i;
 
-	i = ft_int_len(n) - 1;
+	i = ft_longlong_len(n) - 1;
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	s = ft_strnew(ft_int_len(n));
+	s = ft_strnew(ft_longlong_len(n));
 	if (s == NULL)
 		return (0);
 	if (n < 0)

@@ -16,11 +16,11 @@
 
 int	main(void)
 {
-	ft_putendl("printf(\"%lX\", ULONG_MAX)");
+	ft_putendl("printf(\"%d\", -42)");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%lX\n", ULONG_MAX));
+	ft_putnbrendl(ft_printf("%d\n", -42));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%lX\n", ULONG_MAX));
+	ft_putnbrendl(printf("%d\n", -42));
 
 	ft_putendl("\n\nprintf(\"%lo\", ULONG_MAX)");
 	ft_putendl("mienne : ");
@@ -28,9 +28,9 @@ int	main(void)
 	ft_putendl("vraie printf : ");
 	ft_putnbrendl(printf("%lo\n", ULONG_MAX));
 	
-	ft_putendl("\n\nprintf(\"%lx\", ULONG_MAX)");
+	ft_putendl("\n\nprintf(\"%x\", UINT_MAX)");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%lx\n", ULONG_MAX));
+	ft_putnbrendl(ft_printf("%x\n", UINT_MAX));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%lx\n", ULONG_MAX));
+	ft_putnbrendl(printf("%x\n", UINT_MAX));
 }

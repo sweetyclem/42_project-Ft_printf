@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_long_len.c                                      :+:      :+:    :+:   */
+/*   ft_put_u_longlong_base.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/09 16:01:53 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/09 16:02:15 by cpirlot          ###   ########.fr       */
+/*   Created: 2018/01/03 08:05:01 by cpirlot           #+#    #+#             */
+/*   Updated: 2018/01/09 09:06:52 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-size_t		ft_long_len(long int nb)
+void	ft_put_u_longlong_base(unsigned long long nb, char base)
 {
-	size_t		len;
-
-	len = 1;
-	while (nb > 9 || nb < -9)
+	if (base > 1 && base <= 10)
 	{
-		nb /= 10;
-		len++;
+        if (nb < (unsigned long long)base)
+			ft_putchar('0' + nb);
+		else
+		{
+			ft_put_u_longlong_base(nb / base, base);
+			ft_putchar('0' + nb % base);
+		}
 	}
-	if (nb < 0)
-		len++;
-	return (len);
+	else if (base == 1)
+		ft_putnchar('1', nb);
 }

@@ -12,30 +12,13 @@
 
 #include "../libft.h"
 
-void	ft_print_hex(int nb)
+void	ft_print_hex(long long int nb, const char *str)
 {
-	char *str;
-
-	str = "0123456789abcdef";
-	if (nb == 0)
-		ft_putchar('0');
-	while (nb)
+	if (nb < 16)
+		ft_putchar(str[nb]);
+	else
 	{
+		ft_print_u_hex(nb / 16, str);
 		ft_putchar(str[nb % 16]);
-		nb = nb / 16;
-	}
-}
-
-void	ft_print_hex_caps(int nb)
-{
-	char *str;
-
-	str = "0123456789ABCDEF";
-	if (nb == 0)
-		ft_putchar('0');
-	while (nb)
-	{
-		ft_putchar(str[nb % 16]);
-		nb = nb / 16;
 	}
 }

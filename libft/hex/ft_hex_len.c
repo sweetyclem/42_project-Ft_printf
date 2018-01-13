@@ -21,6 +21,6 @@ int	ft_hex_len(unsigned long long int nb)
 	if (nb < 16)
 		char_written = 1;
 	else
-		char_written = ft_u_int_len_base(nb, 16);
+		char_written = ft_u_len_base(nb, 16);
 	return (char_written);
 }
