@@ -15,9 +15,7 @@
 
 void	ft_print_u_l_hex(unsigned long long int nb, const char *str)
 {
-	if (nb > UINT_MAX)
-		ft_putchar('0');
-	else if (nb < 16)
+	if (nb < 16)
 		ft_putchar(str[nb]);
 	else
 	{

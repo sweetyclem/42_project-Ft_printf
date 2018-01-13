@@ -18,9 +18,7 @@ int	ft_hex_len(unsigned long long int nb)
 	int char_written;
 
 	char_written = 0;
-	if (nb > UINT_MAX)
-		char_written = 1;
-	else if (nb < 16)
+	if (nb < 16)
 		char_written = 1;
 	else
 		char_written = ft_u_int_len_base(nb, 16);
