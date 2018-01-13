@@ -100,7 +100,7 @@ int	print_x(va_list *va, int char_written, t_format format)
 
 	c = format.conversion;
 
-	if (format.l == 1 || c == 'X')
+	if (format.l == 1)
 		nb = (unsigned long long)va_arg(*va, unsigned long);
 	else if (format.l == 2)
 		nb = (unsigned long long)va_arg(*va, unsigned long long);
