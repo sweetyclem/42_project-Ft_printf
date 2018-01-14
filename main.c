@@ -16,21 +16,21 @@
 
 int	main(void)
 {
-	ft_putendl("printf(\"%llo, %llo\", 0, ULLONG_MAX)");
+	ft_putendl("printf(\"%hhd\", CHAR_MAX + 42))");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%llo, %llo\n", 0, ULLONG_MAX));
+	ft_putnbrendl(ft_printf("%hhd\n", CHAR_MAX + 42));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%llo, %llo\n", 0, ULLONG_MAX));
+	ft_putnbrendl(printf("%hhd\n", CHAR_MAX + 42));
 
-	ft_putendl("\n\nprintf(\"%#08x\", 42)");
-	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%#08x\n", 42));
-	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%#08x\n", 42));
+	// ft_putendl("\n\nprintf(\"%#08x\", 42)");
+	// ft_putendl("mienne : ");
+	// ft_putnbrendl(ft_printf("%#08x\n", 42));
+	// ft_putendl("vraie printf : ");
+	// ft_putnbrendl(printf("%#08x\n", 42));
 	
-	ft_putendl("\n\nprintf(\"%jx\", 4294967296)");
-	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%jx\n", 4294967296));
-	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%jx\n", 4294967296));
+	// ft_putendl("\n\nprintf(\"%jx\", 4294967296)");
+	// ft_putendl("mienne : ");
+	// ft_putnbrendl(ft_printf("%jx\n", 4294967296));
+	// ft_putendl("vraie printf : ");
+	// ft_putnbrendl(printf("%jx\n", 4294967296));
 }

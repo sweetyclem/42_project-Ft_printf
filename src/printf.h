@@ -74,8 +74,9 @@ int			print_x_longlong(int char_written, t_format format,
 /*
 ** Printing for strings and chars
 */
-int			print_char(va_list *va, t_format format);
-int			print_string(va_list *va, t_format format);
+int			print_s_c(va_list *va, t_format format);
+int			print_char(va_list *va, t_format format, int c);
+int			print_string(va_list *va, t_format format, char *str);
 int			print_ptr(va_list *va, t_format format);
 int			print_plain_char(int char_written, t_format format);
 #endif

@@ -12,13 +12,28 @@
 
 #include "../printf.h"
 
-int		print_string(va_list *va, t_format format)
+int		print_s_c(va_list *va, t_format format)
 {
-	int		char_written;
-	char	*str;
+	int				char_written;
+	char			c;
 
 	char_written = 0;
-	str = (char *)va_arg(*va, char *);
+	c = format.conversion;
+	if (c == 'c' || c == 'C')
+	{
+		str = (char *)va_arg(*va, char *);
+		char_written += print_char(char_written, format, int c);
+	}
+	else if (c == 's' || c == 'S')
+		char_written += print_string(char_written, format, char *str);
+	return (char_written);
+}
+
+int		print_string(va_list *va, t_format format, char *str)
+{
+	int		char_written;
+
+	char_written = 0;
 	if (str)
 	{
 		char_written += (int)ft_strlen(str);
@@ -36,10 +51,9 @@ int		print_string(va_list *va, t_format format)
 	return (char_written);
 }
 
-int		print_char(va_list *va, t_format format)
+int		print_char(va_list *va, t_format format, int c)
 {
 	int char_written;
-	int c;
 
 	char_written = 0;
 	c = (int)va_arg(*va, int);

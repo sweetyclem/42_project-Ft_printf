@@ -43,6 +43,11 @@ int	print_d(va_list *va, int char_written, t_format format)
 			nb = (long long)va_arg(*va, long);
 		else if (format.l == 2)
 			nb = (long long)va_arg(*va, long long);
+		else if (format.h == 2)
+		{
+			nb = (char)va_arg(*va, int);
+			//char_written += print_char(char_written, nb);
+		}
 		else
 			nb = (long long)va_arg(*va, int);
 		char_written += print_d_longlong(char_written, format, nb);
