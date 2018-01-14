@@ -16,11 +16,11 @@
 
 int	main(void)
 {
-	ft_putendl("printf(\"%#8x\", 42)");
+	ft_putendl("printf(\"%llo, %llo\", 0, ULLONG_MAX)");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%#8x\n", 42));
+	ft_putnbrendl(ft_printf("%llo, %llo\n", 0, ULLONG_MAX));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%#8x\n", 42));
+	ft_putnbrendl(printf("%llo, %llo\n", 0, ULLONG_MAX));
 
 	ft_putendl("\n\nprintf(\"%#08x\", 42)");
 	ft_putendl("mienne : ");

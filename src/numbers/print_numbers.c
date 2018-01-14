@@ -58,17 +58,22 @@ int	print_o(va_list *va, int char_written, t_format format)
 	unsigned long long	u_nb;
 
 	c = format.conversion;
-	if (format.l == 1 || c == 'O')
+	if (format.l || c == 'O')
 	{
-		u_nb = (unsigned long long)va_arg(*va, unsigned long);
-		char_written += print_u_o_longlong(char_written, format, u_nb);
+		if (format.l == 1 || c == 'O')
+		{
+			u_nb = (unsigned long long)va_arg(*va, unsigned long);
+			char_written += print_u_o_longlong(char_written, format, u_nb);
+		}
+		else if (format.l == 2)
+		{
+			u_nb = (unsigned long long)va_arg(*va, unsigned long long);
+			char_written += print_u_o_longlong(char_written, format, u_nb);
+		}
 	}
 	else
 	{			
-		if (format.l == 2)
-			nb = (long long)va_arg(*va, long long);
-		else
-			nb = (long long)va_arg(*va, int);
+		nb = (long long)va_arg(*va, int);
 		char_written += print_o_longlong(char_written, format, nb);
 	}
 	return (char_written);
