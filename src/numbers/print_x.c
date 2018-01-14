@@ -17,8 +17,8 @@ int	print_x_longlong(int char_written, t_format format, unsigned long long nb)
 	char_written += pound_length(format, nb);
 	char_written += ft_hex_len(nb);
 	char_written += print_width(format, char_written);
-	char_written += print_zero_padding(format, char_written);
 	print_pound(format, nb);
+	char_written += print_zero_padding(format, char_written);
 	if (format.conversion == 'x')
 		ft_print_u_hex(nb, "0123456789abcdef");
 	else if (format.conversion == 'X')

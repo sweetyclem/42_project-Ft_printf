@@ -33,8 +33,10 @@ typedef	struct	s_list
 char			**ft_strsplit(const char *s, char c);
 char			*ft_strcat(char *s1, const char *s2);
 char			*ft_strchr(const char *s, int c);
+char			*ft_str_multi_chr(char *str, char *characters);
 char			*ft_strcpy(char *s1, const char *s2);
 char			*ft_strdup (const char *str);
+char			*ft_strndup(const char *str, size_t n);
 char			*ft_strjoin(const char *s1, const char *s2);
 char			*ft_strncat(char *s1, const char *s2, size_t max);
 char			*ft_strncpy(char *s1, const char *s2, size_t n);
