@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/20 11:50:13 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 15:59:05 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/15 07:40:35 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,8 @@ int			dispatch_conversion(va_list *va, char **str, t_format format)
 	format.conversion = (*str)[i];
 	if (ft_strchr("dDiuUoOuUxX", format.conversion))
 		char_written = print_numbers(va, format);
-	else if (ft_strchr("sS", format.conversion))
-		char_written = print_string(va, format);
-	else if (ft_strchr("cC", format.conversion))
-		char_written = print_char(va, format);
+	else if (ft_strchr("sScC", format.conversion))
+		char_written = print_s_c(va, format);
 	else if (format.conversion == 'p')
 		char_written = print_ptr(va, format);
 	else

@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 07:00:40 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 09:33:48 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/15 07:53:46 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,7 @@ int	print_d(va_list *va, int char_written, t_format format)
 		else if (format.l == 2)
 			nb = (long long)va_arg(*va, long long);
 		else if (format.h == 2)
-		{
 			nb = (char)va_arg(*va, int);
-			//char_written += print_char(char_written, nb);
-		}
 		else
 			nb = (long long)va_arg(*va, int);
 		char_written += print_d_longlong(char_written, format, nb);

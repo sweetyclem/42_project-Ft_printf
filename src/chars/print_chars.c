@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 07:23:25 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 14:43:01 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/15 07:51:11 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 
 int		print_s_c(va_list *va, t_format format)
 {
-	int				char_written;
-	char			c;
+	int		char_written;
+	char	c;
+	char	*str;
 
 	char_written = 0;
-	c = format.conversion;
-	if (c == 'c' || c == 'C')
+	if (format.conversion == 'c' || format.conversion == 'C')
+	{
+		c = (char)va_arg(*va, int);
+		char_written += print_char(char_written, format, c);
+	}
+	else if (format.conversion == 's' || format.conversion == 'S')
 	{
 		str = (char *)va_arg(*va, char *);
-		char_written += print_char(char_written, format, int c);
+		char_written += print_string(char_written, format, str);
 	}
-	else if (c == 's' || c == 'S')
-		char_written += print_string(char_written, format, char *str);
 	return (char_written);
 }
 
-int		print_string(va_list *va, t_format format, char *str)
+int		print_string(int char_written, t_format format, char *str)
 {
-	int		char_written;
-
-	char_written = 0;
 	if (str)
 	{
 		char_written += (int)ft_strlen(str);
@@ -45,19 +45,15 @@ int		print_string(va_list *va, t_format format, char *str)
 	else
 	{
 		ft_putstr("(null)");
-		char_written = 6;
+		char_written += 6;
 		char_written += print_width_minus(format, char_written);
 	}
 	return (char_written);
 }
 
-int		print_char(va_list *va, t_format format, int c)
+int		print_char(int char_written, t_format format, char c)
 {
-	int char_written;
-
-	char_written = 0;
-	c = (int)va_arg(*va, int);
-	char_written = 1;
+	char_written += 1;
 	char_written += print_width(format, char_written);
 	char_written += print_zero_padding(format, char_written);
 	ft_putchar(c);

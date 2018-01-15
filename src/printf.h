@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:24:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 15:57:23 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/15 07:54:20 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ int			print_x_longlong(int char_written, t_format format,
 ** Printing for strings and chars
 */
 int			print_s_c(va_list *va, t_format format);
-int			print_char(va_list *va, t_format format, int c);
-int			print_string(va_list *va, t_format format, char *str);
+int			print_char(int char_written, t_format format, char c );
+int			print_string(int char_written, t_format format, char *str);
 int			print_ptr(va_list *va, t_format format);
 int			print_plain_char(int char_written, t_format format);
 #endif
