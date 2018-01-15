@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 13:40:24 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/15 11:45:31 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/15 12:01:22 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ int	get_width(char *str)
 	while (str[i] != '\0')
 	{
 		before = ft_strndup(str, i);
-		if (ft_strchr("0123456789", str[i]) &&
-		!ft_strchr(before, '.'))
+		if (ft_strchr("0123456789", str[i]) && !ft_strchr(before, '.'))
 		{
 			tmp[j] = str[i];
 			j++;
@@ -45,13 +44,10 @@ int	get_precision(char *str)
 {
 	int		i;
 	int		j;
-	char	*tmp;
-	int		precision;
+	char	tmp[ft_strlen(str)];
 
 	i = 0;
 	j = 0;
-	precision = 0;
-	tmp = ft_strnew(ft_strlen(str));
 	while (str[i] != '\0')
 	{
 		if (str[i] == '.')
@@ -66,7 +62,5 @@ int	get_precision(char *str)
 		}
 		i++;
 	}
-	precision = ft_atoi(tmp);
-	free(tmp);
-	return (precision);
+	return (ft_atoi(tmp));
 }

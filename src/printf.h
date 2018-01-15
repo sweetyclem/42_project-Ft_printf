@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:24:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/15 10:37:22 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/15 11:54:20 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_format	save_format(char *str, int i);
 ** Format saving
 */
 int			get_width(char *str);
-int         get_precision(char *str);
+int			get_precision(char *str);
 int			get_zero_flag(char *str, int minus);
 int			get_plus_flag(char *str);
 int			get_minus_flag(char *str);
@@ -50,7 +50,7 @@ int			print_plus(t_format format, int nb);
 int			print_width(t_format format, int char_written);
 int			print_width_minus(t_format format, int char_written);
 int			print_zero_padding(t_format format, int char_written);
-int         print_precision(t_format format, int nb_len);
+int			print_precision(t_format format, int nb_len);
 
 /*
 ** Printing for conversions d i D u U
