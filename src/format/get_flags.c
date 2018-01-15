@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 15:31:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/09 11:59:38 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/15 10:45:31 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int	get_zero_flag(char *str, int minus)
 		if (str[i] == '0' && !minus)
 		{
 			before = ft_strndup(str, i);
-			if (ft_str_multi_chr(before, "123456789.") == NULL)
+			if (ft_str_multi_chr(before, "123456789") == NULL &&
+			!ft_strchr(str, '.'))
 			{
 				free(before);
 				return (1);

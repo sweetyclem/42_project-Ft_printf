@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:24:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/15 08:31:56 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/15 10:27:31 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 typedef struct	s_format
 {
 	char	conversion;
+	int		precision;
 	int		min_width;
 	int		zero;
 	int		plus;

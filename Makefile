@@ -6,7 +6,7 @@
 #    By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/18 13:19:02 by cpirlot           #+#    #+#              #
-#    Updated: 2018/01/10 15:54:34 by cpirlot          ###   ########.fr        #
+#    Updated: 2018/01/15 10:34:09 by cpirlot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC			= gcc
 FLAGS		= -Wall -Werror -Wextra
 INCLUDES	= printf.h struct.h
 SRC			= ft_printf.c print_chars.c print_numbers.c parse_args.c \
-			get_width.c get_flags.c print_flags.c print_padding.c print_di.c \
+			get_precision_width.c get_flags.c print_flags.c print_padding.c print_di.c \
 			print_o.c get_length.c print_u.c print_x.c
 LIBFT		= ./libft
 OBJDIR		= obj
