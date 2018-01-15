@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 07:00:40 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/15 07:53:46 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/15 08:08:54 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	print_o(va_list *va, int char_written, t_format format)
 	unsigned long long	u_nb;
 
 	c = format.conversion;
-	if (format.l || c == 'O')
+	if (format.l || format.h || c == 'O')
 	{
 		if (format.l == 1 || c == 'O')
 		{
@@ -70,6 +70,11 @@ int	print_o(va_list *va, int char_written, t_format format)
 		else if (format.l == 2)
 		{
 			u_nb = (unsigned long long)va_arg(*va, unsigned long long);
+			char_written += print_u_o_longlong(char_written, format, u_nb);
+		}
+		else if (format.h == 2)
+		{
+			u_nb = (unsigned char)va_arg(*va, unsigned int);
 			char_written += print_u_o_longlong(char_written, format, u_nb);
 		}
 	}
@@ -93,6 +98,8 @@ int	print_u(va_list *va, int char_written, t_format format)
 			nb = (unsigned long long)va_arg(*va, unsigned long);
 		else if (format.l == 2)
 			nb = (unsigned long long)va_arg(*va, unsigned long long);
+		else if (format.h == 2)
+			nb = (unsigned char)va_arg(*va, unsigned int);
 		else
 			nb = (unsigned long long)va_arg(*va, unsigned int);
 		char_written += print_u_longlong(char_written, format, nb);
@@ -111,6 +118,8 @@ int	print_x(va_list *va, int char_written, t_format format)
 		nb = (unsigned long long)va_arg(*va, unsigned long);
 	else if (format.l == 2)
 		nb = (unsigned long long)va_arg(*va, unsigned long long);
+	else if (format.h == 2)
+		nb = (unsigned char)va_arg(*va, unsigned int);
 	else
 		nb = (unsigned long long)va_arg(*va, unsigned int);
 	char_written += print_x_longlong(char_written, format, nb);
