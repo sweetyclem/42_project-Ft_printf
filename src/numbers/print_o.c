@@ -6,13 +6,13 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 09:22:28 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/15 09:16:59 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/15 10:21:17 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../printf.h"
 
-int	print_o_signed(va_list *va, int char_written, t_format format)
+int	print_o_unsigned(va_list *va, int char_written, t_format format)
 {
 	unsigned long long	u_nb;
 

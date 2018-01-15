@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 07:00:40 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/15 09:12:02 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/15 10:21:41 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ int	print_o(va_list *va, int char_written, t_format format)
 
 	if (format.l || format.h || format.j || format.z ||
 	format.conversion == 'O')
-		char_written += print_o_signed(va, char_written, format);
+		char_written += print_o_unsigned(va, char_written, format);
 	else
 	{
-		nb = (long long)va_arg(*va, int);
+		nb = (long long)va_arg(*va, unsigned int);
 		char_written += print_o_longlong(char_written, format, nb);
 	}
 	return (char_written);

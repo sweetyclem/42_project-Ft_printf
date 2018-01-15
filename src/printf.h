@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:24:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/15 09:17:47 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/15 10:20:40 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ unsigned long long nb);
 ** Printing for conversions o O x X
 */
 int			print_o(va_list *va, int char_written, t_format format);
-int			print_o_signed(va_list *va, int char_written, t_format format);
+int			print_o_unsigned(va_list *va, int char_written, t_format format);
 int			print_o_longlong(int char_written, t_format format, long long nb);
 int			print_u_o_longlong(int char_written, t_format format,
 unsigned long long nb);
