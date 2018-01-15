@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 13:10:42 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 08:14:37 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/15 15:31:53 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,25 @@ int	print_space(t_format format, int nb)
 
 int	print_pound(t_format format, int nb)
 {
-	if (format.pound && ft_strchr("oO", format.conversion) && nb != 0)
+	char	c;
+
+	c = format.conversion;
+	if (format.pound && ft_strchr("oO", c) && nb != 0)
 	{
 		ft_putchar('0');
 		return (1);
 	}
-	else if (format.pound && format.conversion == 'x' && nb != 0)
+	if (format.pound && ft_strchr("oO", c) && format.precision && nb == 0)
+	{
+		ft_putchar('0');
+		return (1);
+	}
+	else if (format.pound && c == 'x' && nb != 0)
 	{
 		ft_putstr("0x");
 		return (2);
 	}
-	else if (format.pound && format.conversion == 'X' && nb != 0)
+	else if (format.pound && c == 'X' && nb != 0)
 	{
 		ft_putstr("0X");
 		return (2);
