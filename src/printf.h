@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:24:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/15 07:54:20 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/15 08:35:37 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int			get_length(char *str, char c);
 */
 int			print_space(t_format format, int nb);
 int			print_pound(t_format format, int nb);
-int	        pound_length(t_format format, int nb);
+int			pound_length(t_format format, int nb);
 int			print_plus(t_format format, int nb);
 int			print_width(t_format format, int char_written);
 int			print_width_minus(t_format format, int char_written);
@@ -58,7 +58,7 @@ int			print_d(va_list *va, int char_written, t_format format);
 int			print_d_longlong(int char_written, t_format format, long long nb);
 int			print_u(va_list *va, int char_written, t_format format);
 int			print_u_longlong(int char_written, t_format format,
-            unsigned long long nb);
+unsigned long long nb);
 
 /*
 ** Printing for conversions o O x X
@@ -66,16 +66,16 @@ int			print_u_longlong(int char_written, t_format format,
 int			print_o(va_list *va, int char_written, t_format format);
 int			print_o_longlong(int char_written, t_format format, long long nb);
 int			print_u_o_longlong(int char_written, t_format format,
-            unsigned long long nb);
+unsigned long long nb);
 int			print_x(va_list *va, int char_written, t_format format);
 int			print_x_longlong(int char_written, t_format format,
-            unsigned long long nb);
+unsigned long long nb);
 
 /*
 ** Printing for strings and chars
 */
 int			print_s_c(va_list *va, t_format format);
-int			print_char(int char_written, t_format format, char c );
+int			print_char(int char_written, t_format format, char c);
 int			print_string(int char_written, t_format format, char *str);
 int			print_ptr(va_list *va, t_format format);
 int			print_plain_char(int char_written, t_format format);

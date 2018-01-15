@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 07:00:40 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/15 08:21:57 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/15 08:38:21 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,12 @@ int	print_numbers(va_list *va, t_format format)
 		char_written += print_d(va, char_written, format);
 	else if (c == 'u' || c == 'U')
 		char_written += print_u(va, char_written, format);
-	else if (c == 'o'|| c == 'O')
+	else if (c == 'o' || c == 'O')
 		char_written += print_o(va, char_written, format);
-	else if (c == 'x'|| c == 'X')
+	else if (c == 'x' || c == 'X')
 		char_written += print_x(va, char_written, format);
 	return (char_written);
 }
-
 
 int	print_d(va_list *va, int char_written, t_format format)
 {
@@ -54,7 +53,6 @@ int	print_d(va_list *va, int char_written, t_format format)
 	return (char_written);
 }
 
-
 int	print_o(va_list *va, int char_written, t_format format)
 {
 	char				c;
@@ -76,7 +74,7 @@ int	print_o(va_list *va, int char_written, t_format format)
 		char_written += print_u_o_longlong(char_written, format, u_nb);
 	}
 	else
-	{			
+	{
 		nb = (long long)va_arg(*va, int);
 		char_written += print_o_longlong(char_written, format, nb);
 	}
@@ -85,7 +83,7 @@ int	print_o(va_list *va, int char_written, t_format format)
 
 int	print_u(va_list *va, int char_written, t_format format)
 {
-	char		c;
+	char				c;
 	unsigned long long	nb;
 
 	c = format.conversion;
@@ -108,11 +106,10 @@ int	print_u(va_list *va, int char_written, t_format format)
 
 int	print_x(va_list *va, int char_written, t_format format)
 {
-	char		c;
+	char				c;
 	unsigned long long	nb;
 
 	c = format.conversion;
-
 	if (format.l == 1)
 		nb = (unsigned long long)va_arg(*va, unsigned long);
 	else if (format.l == 2)
@@ -124,6 +121,5 @@ int	print_x(va_list *va, int char_written, t_format format)
 	else
 		nb = (unsigned long long)va_arg(*va, unsigned int);
 	char_written += print_x_longlong(char_written, format, nb);
-
 	return (char_written);
 }
