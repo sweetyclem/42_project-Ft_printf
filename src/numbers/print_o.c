@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 09:22:28 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/15 15:22:33 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/15 15:52:52 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	print_o_longlong(int char_written, t_format format, long long nb)
 	char_written += print_width(format, char_written +
 	(precision_to_write > 0 ? precision_to_write : 0));
 	char_written += print_zero_padding(format, char_written);
-	char_written += print_precision(format, nb);
+	char_written += print_precision(format, nb, ft_len_base(nb, 8));
 	if (!(format.precision == -1 && nb == 0))
 		ft_put_longlong_base(nb, 8);
 	char_written += print_width_minus(format, char_written);
@@ -61,7 +61,7 @@ int	print_u_o_longlong(int char_written, t_format format, unsigned long long nb)
 	char_written += print_pound(format, nb);
 	char_written += print_width(format, char_written);
 	char_written += print_zero_padding(format, char_written);
-	char_written += print_precision(format, nb);
+	char_written += print_precision(format, nb, ft_len_base(nb, 8));
 	if (!(format.precision == -1 && nb == 0))
 		ft_put_u_longlong_base(nb, 8);
 	char_written += print_width_minus(format, char_written);

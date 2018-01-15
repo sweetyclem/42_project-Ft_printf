@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 09:16:39 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/15 14:17:34 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/15 15:52:37 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int			print_d_longlong(int char_written, t_format format, long long nb)
 	if (nb < 0)
 		ft_putchar('-');
 	char_written += print_zero_padding(format, char_written);
-	char_written += print_precision(format, nb);
+	char_written += print_precision(format, nb, ft_longlong_len(nb));
 	if (!(format.precision == -1 && nb == 0))
 		ft_put_longlong_d(nb);
 	char_written += print_width_minus(format, char_written);

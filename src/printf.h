@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:24:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/15 12:44:51 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/15 15:52:17 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int			print_plus(t_format format, int nb);
 int			print_width(t_format format, int char_written);
 int			print_width_minus(t_format format, int char_written);
 int			print_zero_padding(t_format format, int char_written);
-int			print_precision(t_format format, int nb);
+int			print_precision(t_format format, int nb, int nb_len);
 
 /*
 ** Printing for conversions d i D u U
