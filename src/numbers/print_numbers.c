@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 07:00:40 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/15 08:08:54 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/15 08:21:57 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	print_d(va_list *va, int char_written, t_format format)
 			nb = (long long)va_arg(*va, long);
 		else if (format.l == 2)
 			nb = (long long)va_arg(*va, long long);
+		else if (format.h == 1)
+			nb = (short)va_arg(*va, int);
 		else if (format.h == 2)
 			nb = (char)va_arg(*va, int);
 		else
@@ -62,21 +64,16 @@ int	print_o(va_list *va, int char_written, t_format format)
 	c = format.conversion;
 	if (format.l || format.h || c == 'O')
 	{
+		u_nb = 0;
 		if (format.l == 1 || c == 'O')
-		{
 			u_nb = (unsigned long long)va_arg(*va, unsigned long);
-			char_written += print_u_o_longlong(char_written, format, u_nb);
-		}
 		else if (format.l == 2)
-		{
 			u_nb = (unsigned long long)va_arg(*va, unsigned long long);
-			char_written += print_u_o_longlong(char_written, format, u_nb);
-		}
+		else if (format.h == 1)
+			u_nb = (unsigned short)va_arg(*va, unsigned int);
 		else if (format.h == 2)
-		{
 			u_nb = (unsigned char)va_arg(*va, unsigned int);
-			char_written += print_u_o_longlong(char_written, format, u_nb);
-		}
+		char_written += print_u_o_longlong(char_written, format, u_nb);
 	}
 	else
 	{			
@@ -98,6 +95,8 @@ int	print_u(va_list *va, int char_written, t_format format)
 			nb = (unsigned long long)va_arg(*va, unsigned long);
 		else if (format.l == 2)
 			nb = (unsigned long long)va_arg(*va, unsigned long long);
+		else if (format.h == 1)
+			nb = (unsigned short)va_arg(*va, unsigned int);
 		else if (format.h == 2)
 			nb = (unsigned char)va_arg(*va, unsigned int);
 		else
@@ -118,6 +117,8 @@ int	print_x(va_list *va, int char_written, t_format format)
 		nb = (unsigned long long)va_arg(*va, unsigned long);
 	else if (format.l == 2)
 		nb = (unsigned long long)va_arg(*va, unsigned long long);
+	else if (format.h == 1)
+		nb = (unsigned short)va_arg(*va, unsigned int);
 	else if (format.h == 2)
 		nb = (unsigned char)va_arg(*va, unsigned int);
 	else
