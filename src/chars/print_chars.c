@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 07:23:25 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/15 07:51:11 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/15 16:34:33 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,19 +61,26 @@ int		print_char(int char_written, t_format format, char c)
 	return (char_written);
 }
 
-int		print_ptr(va_list *va, t_format format)
+int		print_ptr(int char_written, va_list *va, t_format format)
 {
-	int		char_written;
 	void	*ptr;
+	int		p_len;
+	int		prec;
 
-	char_written = 0;
+	prec = 0;
 	ptr = va_arg(*va, void *);
-	char_written = ft_ptr_len_base((size_t)ptr, 16);
+	p_len = ft_ptr_len_base((size_t)ptr, 16);
+	if (!(format.precision == -1 && ptr == 0))
+		char_written += p_len;
 	char_written += 2;
-	char_written += print_width(format, char_written);
+	if (format.precision > 0)
+		prec = format.precision - (ptr < 0 ? p_len - 1 : p_len);
+	char_written += print_width(format, char_written + (prec > 0 ? prec : 0));
 	ft_putstr("0x");
 	char_written += print_zero_padding(format, char_written);
-	ft_print_ptr((size_t)ptr);
+	char_written += print_precision(format, (int)ptr, p_len);
+	if (!(format.precision == -1 && ptr == 0))
+		ft_print_ptr((size_t)ptr);
 	char_written += print_width_minus(format, char_written);
 	return (char_written);
 }
