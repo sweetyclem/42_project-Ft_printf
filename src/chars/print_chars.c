@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 07:23:25 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/16 15:11:07 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/16 16:39:31 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,28 +34,30 @@ int		print_s_c(va_list *va, t_format format)
 
 int		print_string(int char_written, t_format format, char *str)
 {
+	int	prec;
+
+	prec = format.precision;
 	if (str)
 	{
-		if (format.precision == 0)
+		if (prec == 0 && ft_strlen(str) > 0)
 			char_written += (int)ft_strlen(str);
-		if (format.precision > (int)ft_strlen(str) && ft_strlen(str) > 0)
-			char_written += format.precision - (int)ft_strlen(str);
-		else if (ft_strlen(str) > 0)
-			char_written += format.precision;
+		else if (prec > 0 && prec < (int)ft_strlen(str) && ft_strlen(str) > 0)
+			char_written += prec;
+		else if (prec > 0 && ft_strlen(str) > 0)
+			char_written += (int)ft_strlen(str);
 		char_written += print_width(format, char_written);
 		char_written += print_zero_padding(format, char_written);
-		if (format.precision > 0)
-			ft_putnstr(str, format.precision);
-		else
+		if (prec > 0)
+			ft_putnstr(str, prec);
+		else if (prec != -1)
 			ft_putstr(str);
-		char_written += print_width_minus(format, char_written);
 	}
 	else
 	{
 		ft_putstr("(null)");
 		char_written += 6;
-		char_written += print_width_minus(format, char_written);
 	}
+	char_written += print_width_minus(format, char_written);
 	return (char_written);
 }
 
