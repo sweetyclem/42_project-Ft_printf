@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 08:25:32 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/15 15:52:24 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/16 14:21:04 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,12 +83,11 @@ int	print_precision(t_format format, int nb, int nb_len)
 
 	zeros_written = 0;
 	i = 0;
+	if (nb < 0)
+		nb_len -= 1;
 	if (format.precision != -1 && format.precision > nb_len)
 	{
-		if (nb < 0)
-			i = (format.precision - nb_len) + 1;
-		else
-			i = (format.precision - nb_len);
+		i = (format.precision - nb_len);
 		while (i > 0)
 		{
 			ft_putchar('0');

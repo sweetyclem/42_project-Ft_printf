@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 07:23:25 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/15 16:34:33 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/16 15:11:07 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,18 @@ int		print_string(int char_written, t_format format, char *str)
 {
 	if (str)
 	{
-		char_written += (int)ft_strlen(str);
+		if (format.precision == 0)
+			char_written += (int)ft_strlen(str);
+		if (format.precision > (int)ft_strlen(str) && ft_strlen(str) > 0)
+			char_written += format.precision - (int)ft_strlen(str);
+		else if (ft_strlen(str) > 0)
+			char_written += format.precision;
 		char_written += print_width(format, char_written);
 		char_written += print_zero_padding(format, char_written);
-		ft_putstr(str);
+		if (format.precision > 0)
+			ft_putnstr(str, format.precision);
+		else
+			ft_putstr(str);
 		char_written += print_width_minus(format, char_written);
 	}
 	else
