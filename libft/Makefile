@@ -69,9 +69,11 @@ $(OBJDIR)/%.o: %.c
 
 clean:
 	@$(RM) -rf $(OBJDIR)
+	@echo "clean libft: $(_CYAN)done$(_END)"
 
 fclean: clean
 	@$(RM) -f $(NAME)
+	@echo "fclean libft: $(_CYAN)done$(_END)"
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 #    By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/18 13:19:02 by cpirlot           #+#    #+#              #
-#    Updated: 2018/01/15 10:34:09 by cpirlot          ###   ########.fr        #
+#    Updated: 2018/01/16 14:03:56 by cpirlot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,33 @@ NAME	=  libftprintf.a
 
 CC			= gcc
 FLAGS		= -Wall -Werror -Wextra
-INCLUDES	= printf.h struct.h
-SRC			= ft_printf.c print_chars.c print_numbers.c parse_args.c \
+INCLUDES	= printf.h struct.h libft/libft.h
+SRC			= ft_atoi.c ft_bzero.c ft_isalpha.c ft_isalnum.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memalloc.c \
+			ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memdel.c ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar.c \
+			ft_putchar_fd.c ft_putendl.c ft_putendl_fd.c ft_putnbr.c ft_putnbr_fd.c ft_putstr.c ft_putstr_fd.c \
+			ft_strcat.c ft_strchr.c ft_strclr.c ft_strcmp.c ft_strcpy.c ft_strdel.c ft_strdup.c ft_strequ.c \
+			ft_striter.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlen.c ft_strmap.c ft_strmapi.c ft_puterror.c \
+			ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c ft_strrchr.c ft_is_space.c\
+			ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c ft_tolower.c ft_toupper.c ft_strrev.c ft_putnbrendl.c \
+			ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c ft_lstnew.c ft_skip_whitespace.c ft_abs.c \
+			ft_longlong_len.c ft_putnstr.c ft_put_longlong_base.c ft_put_u_longlong_base.c \
+			ft_putnchar.c ft_print_hex.c ft_print_ptr.c ft_print_u_hex.c ft_hex_len.c ft_ptr_len_base.c \
+			ft_u_longlong_len.c ft_len_base.c ft_u_len_base.c ft_strndup.c ft_str_multi_chr.c \
+			ft_printf.c print_chars.c print_numbers.c parse_args.c \
 			get_precision_width.c get_flags.c print_flags.c print_padding.c print_di.c \
 			print_o.c get_length.c print_u.c print_x.c
-LIBFT		= ./libft
 OBJDIR		= obj
-OBJ 		= $(addprefix $(OBJDIR)/,$(SRC:.c=.o))
+OBJ	= $(addprefix $(OBJDIR)/,$(SRC:.c=.o))
+VPATH:=libft/char/:${VPATH}
+VPATH:=libft/hex/:${VPATH}
+VPATH:=libft/lst/:${VPATH}
+VPATH:=libft/mem/:${VPATH}
+VPATH:=libft/nbr/:${VPATH}
+VPATH:=libft/nbr/print/:${VPATH}
+VPATH:=libft/nbr/len/:${VPATH}
+VPATH:=libft/str/:${VPATH}
+VPATH:=libft/str/print/:${VPATH}
+VPATH:=libft/str/n_func/:${VPATH}
 VPATH:=src/:${VPATH}
 VPATH:=src/format:${VPATH}
 VPATH:=src/numbers:${VPATH}
@@ -46,27 +66,23 @@ _END=\x1b[0m
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@make -C $(LIBFT)
-	@cp $(LIBFT)/libft.a $(NAME)
 	@ar rcs $(NAME) $(OBJ)
-	@echo "$(_CYAN)Merged libft.a into libftprintf.a$(_END)"
+	@echo "\n$(NAME) compilation : $(_CYAN)done$(_END)"
 
 $(OBJDIR)/%.o: %.c
 	@mkdir -p obj
 	@printf "%-60b\r" "$(ECHO) $(_CYAN) Compiling $@ $(_END)"
 	@$(CC) $(FLAGS) -c $< -o $@
 
-dev: fclean $(NAME)
+dev: $(NAME)
 	gcc -I include -o a.out main.c -L. -lftprintf
 
 clean:
 	@$(RM) -rf $(OBJDIR)
-	@make clean -C $(LIBFT)
 	@echo "clean printf: $(_CYAN)done$(_END)"
 
 fclean: clean
 	@$(RM) -f $(NAME)
-	@make fclean -C $(LIBFT)
 	@echo "fclean printf: $(_CYAN)done$(_END)"
 
 re: fclean all
