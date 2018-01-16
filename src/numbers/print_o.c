@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 09:22:28 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/15 17:22:20 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/16 13:40:09 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,17 @@ int	print_o_longlong(int char_written, t_format format, long long nb)
 
 	prec = 0;
 	nb_len = ft_len_base(nb, 8);
-	if (!(format.precision == -1 && nb == 0))
+	if (format.precision != -1 || nb != 0 || format.pound)
 		char_written += nb_len;
 	if (format.precision > 0)
 		prec = format.precision - (nb < 0 ? nb_len - 1 : nb_len);
-	if (format.pound)
+	if (format.pound && nb != 0)
 		char_written += 1;
 	char_written += print_width(format, char_written + (prec > 0 ? prec : 0));
 	print_pound(format, nb);
 	char_written += print_zero_padding(format, char_written);
 	char_written += print_precision(format, nb, nb_len);
-	if (!(format.precision == -1 && nb == 0))
+	if (format.precision != -1 || nb != 0)
 		ft_put_longlong_base(nb, 8);
 	char_written += print_width_minus(format, char_written);
 	return (char_written);
