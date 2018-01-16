@@ -6,7 +6,7 @@
 #    By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/18 13:19:02 by cpirlot           #+#    #+#              #
-#    Updated: 2018/01/16 15:15:52 by cpirlot          ###   ########.fr        #
+#    Updated: 2018/01/16 15:29:08 by cpirlot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,10 +79,12 @@ dev: $(NAME)
 
 clean:
 	@$(RM) -rf $(OBJDIR)
+	@make clean -C libft
 	@echo "clean printf: $(_CYAN)done$(_END)"
 
 fclean: clean
 	@$(RM) -f $(NAME)
+	@make fclean -C libft
 	@echo "fclean printf: $(_CYAN)done$(_END)"
 
 re: fclean all
