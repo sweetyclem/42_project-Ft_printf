@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 08:25:32 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/17 11:14:00 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/17 13:50:15 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ int	print_width(t_format format, int char_written)
 				ft_putchar('0');
 				spaces_written++;
 			}
-			else if (!format.zero || (format.conversion == 'd' && format.precision && format.zero))
+			else if (!format.zero || (format.conversion == 'd'
+			&& format.precision && format.zero))
 			{
 				ft_putchar(' ');
 				spaces_written++;

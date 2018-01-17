@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 09:11:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/17 11:18:54 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/17 13:38:13 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,26 @@
 int	main(void)
 {
 	ft_putendl("---MOULITEST---");
-	ft_putendl("printf(\"{%03.2d}\", 0)");
+	ft_putendl("printf(\"{%.10d}\", -42)");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%03.2d\n", 0));
+	ft_putnbrendl(ft_printf("{%.10d}\n", -42));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%03.2d\n", 0));
-	ft_putendl("\n\nprintf(\"%03.2d\", 1)");
+	ft_putnbrendl(printf("{%.10d}\n", -42));
+	ft_putendl("\n\nprintf(\"{%.2d}\", 4242)");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%03.2d\n", 1));
+	ft_putnbrendl(ft_printf("%.2d\n", 4242));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%03.2d\n", 1));
+	ft_putnbrendl(printf("%.2d\n", 4242));
+	ft_putendl("\n\nprintf(\"{%03.2d}\", 4242)");
+	ft_putendl("mienne : ");
+	ft_putnbrendl(ft_printf("%03.2d\n", 4242));
+	ft_putendl("vraie printf : ");
+	ft_putnbrendl(printf("%03.2d\n", 4242));
+	ft_putendl("\n\nprintf(\"{%03.2d}\", -1)");
+	ft_putendl("mienne : ");
+	ft_putnbrendl(ft_printf("%03.2d\n", -1));
+	ft_putendl("vraie printf : ");
+	ft_putnbrendl(printf("%03.2d\n", -1));
 	// ft_putendl("\n\nprintf(\"{%05.s}\", 0)");
 	// ft_putendl("mienne : ");
 	// ft_putnbrendl(ft_printf("{%05.s}\n", 0));
