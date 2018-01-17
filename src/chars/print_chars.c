@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 07:23:25 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/17 08:26:33 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/17 14:15:51 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		print_string(int char_written, t_format format, char *str)
 	int	prec;
 
 	prec = format.precision;
-	if (str)
+	if (str || prec != 0)
 	{
 		if (prec == 0 && ft_strlen(str) > 0)
 			char_written += (int)ft_strlen(str);
