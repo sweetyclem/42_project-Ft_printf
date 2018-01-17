@@ -6,25 +6,22 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 08:25:32 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/17 13:50:15 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/17 14:06:16 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../printf.h"
 
-int	print_width(t_format format, int char_written)
+int	print_width(t_format format, int written)
 {
 	int	spaces_written;
 	int	i;
-	int	width;
 
 	spaces_written = 0;
-	width = format.min_width;
-	i = 0;
-	if (width > 0 && width > char_written && !format.minus)
+	i = format.min_width - written;
+	if (format.min_width > 0 && format.min_width > written && !format.minus)
 	{
-		i = width - char_written;
-		while (i > 0)
+		while (i-- > 0)
 		{
 			if (ft_strchr("cDOUCsSp", format.conversion)
 			&& (format.zero && (format.minus || format.precision)))
@@ -38,7 +35,6 @@ int	print_width(t_format format, int char_written)
 				ft_putchar(' ');
 				spaces_written++;
 			}
-			i--;
 		}
 	}
 	return (spaces_written);

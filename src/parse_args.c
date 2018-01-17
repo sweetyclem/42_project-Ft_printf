@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/20 11:50:13 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/17 08:33:08 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/17 13:54:45 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,6 @@ t_format	save_format(char *full_str, int i)
 
 	str = ft_strnew(i);
 	str = ft_strncpy(str, full_str, i);
-// 
-
 	format.min_width = get_width(str);
 	format.precision = get_precision(str);
 	format.plus = get_plus_flag(str);
