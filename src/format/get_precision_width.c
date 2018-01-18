@@ -53,6 +53,8 @@ int	get_precision(char *str)
 	{
 		if (str[i] == '.')
 		{
+			ft_memset(tmp, '\0', ft_strlen(str));
+			j = 0;
 			i++;
 			while (ft_strchr("0123456789", str[i]) && str[i] != '\0')
 			{
@@ -61,7 +63,8 @@ int	get_precision(char *str)
 				i++;
 			}
 		}
-		i++;
+		else
+			i++;
 	}
 	if (ft_strchr(str, '.') && (ft_strcmp(tmp, "0") == 0 || tmp[0] == '\0'))
 		return (-1);
