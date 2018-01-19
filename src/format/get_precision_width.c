@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 13:40:24 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/15 14:01:49 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/19 18:11:36 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,7 @@ int	get_precision(char *str)
 			j = 0;
 			i++;
 			while (ft_strchr("0123456789", str[i]) && str[i] != '\0')
-			{
-				tmp[j] = str[i];
-				j++;
-				i++;
-			}
+				tmp[j++] = str[i++];
 		}
 		else
 			i++;
