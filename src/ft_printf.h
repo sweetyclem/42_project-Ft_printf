@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:24:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/15 16:28:55 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/22 06:57:12 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ unsigned long long nb);
 /*
 ** Printing for strings and chars
 */
-int			print_s_c(va_list *va, t_format format);
+int			print_sc(va_list *va, t_format format);
 int			print_char(int char_written, t_format format, char c);
 int			print_string(int char_written, t_format format, char *str);
 int			print_ptr(int char_written, va_list *va, t_format format);

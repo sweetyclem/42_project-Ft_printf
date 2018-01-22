@@ -6,11 +6,11 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 08:25:32 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/17 15:00:16 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/22 06:57:51 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
+#include "../ft_printf.h"
 
 int	print_width(t_format format, int written)
 {

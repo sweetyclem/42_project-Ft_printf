@@ -6,11 +6,11 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 15:42:57 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 15:58:18 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/22 06:57:51 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
+#include "../ft_printf.h"
 
 int	get_length(char *str, char c)
 {

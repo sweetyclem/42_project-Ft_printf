@@ -6,11 +6,11 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 15:31:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/17 09:59:51 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/22 06:57:51 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
+#include "../ft_printf.h"
 
 int	get_zero_flag(char *str, int minus)
 {

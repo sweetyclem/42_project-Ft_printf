@@ -6,11 +6,11 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/20 11:50:13 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/17 13:54:45 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/22 06:57:51 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int			parse_args(va_list *va, char **str)
 {
@@ -76,7 +76,7 @@ int			dispatch_conversion(va_list *va, char **str, t_format format)
 	if (ft_strchr("dDiuUoOuUxX", format.conversion))
 		char_written = print_numbers(va, format);
 	else if (ft_strchr("sScC", format.conversion))
-		char_written = print_s_c(va, format);
+		char_written = print_sc(va, format);
 	else if (format.conversion == 'p')
 		char_written = print_ptr(char_written, va, format);
 	else

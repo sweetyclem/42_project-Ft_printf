@@ -6,11 +6,11 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 07:00:40 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/17 16:29:07 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/22 06:57:51 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
+#include "../ft_printf.h"
 
 int	print_numbers(va_list *va, t_format format)
 {

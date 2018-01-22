@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_chars.c                                      :+:      :+:    :+:   */
+/*   print_sc.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 07:23:25 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/17 14:15:51 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/22 06:57:51 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
+#include "../ft_printf.h"
 
-int		print_s_c(va_list *va, t_format format)
+int		print_sc(va_list *va, t_format format)
 {
 	int		char_written;
 	char	c;
