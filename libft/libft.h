@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 09:47:49 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 15:09:32 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/22 16:44:01 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void			ft_striteri(char *s, void (f)(unsigned int, char *));
 void			ft_puterror(char *str);
 char			*ft_strrev(char *str);
 const char		*ft_skip_whitespace(const char *str);
-char			*ft_itoa(int n);
 void			ft_print_ptr(size_t nb);
 size_t			ft_ptr_len_base(size_t ptr, unsigned int base);
 
@@ -91,6 +90,7 @@ int				ft_toupper(int c);
 void			ft_putchar(char c);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putnchar(char c, size_t n);
+int				ft_wcharlen(wchar_t c);
 
 /*
 ** Mem
@@ -119,6 +119,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 ** Nbr
 */
 int				ft_atoi(const char *str);
+int				ft_atoi_base(const char *str, int base);
 int				ft_abs(int a);
 size_t			ft_longlong_len(long long int nbr);
 size_t			ft_len_base(long long int nb, char base);
@@ -129,5 +130,8 @@ void			ft_putnbr_fd(int n, int fd);
 void			ft_putnbrendl(int nbr);
 void			ft_put_longlong_base(long long int nbr, char base);
 void			ft_put_u_longlong_base(unsigned long long int nb, char base);
+int				ft_putwchar(wchar_t c);
+char			*ft_itoa(int n);
+char			*ft_itoa_longlong_base(long long n, char base);
 
 #endif
