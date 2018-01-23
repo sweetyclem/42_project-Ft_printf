@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 16:18:19 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/23 14:56:55 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/23 14:58:51 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,7 @@ static char	**encode(char *bin, char *m)
 	while (i >= 0 && j >= 0)
 	{
 		if (mask[i] == 'x')
-		{
-			mask[i] = bin[j];
-			j--;
-		}
+			mask[i] = bin[j--];
 		i--;
 	}
 	i = 0;
