@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:24:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/22 06:57:12 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/22 11:19:51 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 # include "../libft/libft.h"
 # include "struct.h"
 # include <stdarg.h>
 # include <limits.h>
+# include <stdlib.h>
+# include <wchar.h>
 
 int			ft_printf(const char *format, ...);
 int			parse_format(va_list *va, char *format);
@@ -82,4 +84,6 @@ int			print_char(int char_written, t_format format, char c);
 int			print_string(int char_written, t_format format, char *str);
 int			print_ptr(int char_written, va_list *va, t_format format);
 int			print_plain_char(int char_written, t_format format);
+int			print_unicode(va_list *va, t_format format);
+int			print_unicode_char(int char_written, t_format format, wchar_t c);
 #endif

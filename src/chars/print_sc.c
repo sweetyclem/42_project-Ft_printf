@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 07:23:25 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/22 06:57:51 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/22 07:33:08 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int		print_sc(va_list *va, t_format format)
 	char	*str;
 
 	char_written = 0;
-	if (format.conversion == 'c' || format.conversion == 'C')
+	if (format.conversion == 'c')
 	{
 		c = (char)va_arg(*va, int);
 		char_written += print_char(char_written, format, c);
 	}
-	else if (format.conversion == 's' || format.conversion == 'S')
+	else if (format.conversion == 's')
 	{
 		str = (char *)va_arg(*va, char *);
 		char_written += print_string(char_written, format, str);
