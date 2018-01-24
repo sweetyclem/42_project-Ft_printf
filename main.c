@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 09:11:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/24 09:40:40 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/24 10:24:56 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,14 @@ int		main(void)
 	ft_putnbrendl(ft_printf("{%hhC, %hhC}\n", 0, L'米'));
 	ft_putendl("vraie printf : ");
 	ft_putnbrendl(printf("{%hhC, %hhC}\n", 0, L'米'));
-	ft_putendl("\n\nprintf(\"{% 20.12ld et % 05D% 4.8hi !}\\n\", 0x11ffaa147, 24, (short)-2345)");
+	ft_putendl("\n\nprintf(\"ko%-4.2hhu et %05.2u!\\n\", (unsigned char)-456, 0)");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("{% 20.12ld et % 05D% 4.8hi !}\n", 0x11ffaa147, 24, (short)-2345));
+	ft_putnbrendl(ft_printf("ko%-4.2hhu et %05.2u!\n", (unsigned char)-456, 0));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("{% 20.12ld et % 05D% 4.8hi !}\n", 0x11ffaa147, 24, (short)-2345));
+	ft_putnbrendl(printf("ko%-4.2hhu et %05.2u!\n", (unsigned char)-456, 0));
+	ft_putendl("\n\nprintf(\"ko%-4.2hhu et %05.2d!\\n\", (unsigned char)-456, 0)");
+	ft_putendl("mienne : ");
+	ft_putnbrendl(ft_printf("ko%-4.2hhu et %05.2d!\n", (unsigned char)-456, 0));
+	ft_putendl("vraie printf : ");
+	ft_putnbrendl(printf("ko%-4.2hhu et %05.2d!\n", (unsigned char)-456, 0));
 }
