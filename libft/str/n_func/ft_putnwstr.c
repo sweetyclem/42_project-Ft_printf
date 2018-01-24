@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 08:20:45 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/24 08:28:34 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/24 09:26:37 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,11 @@ void	ft_putnwstr(wchar_t *str, int len)
 	i = 0;
 	while (len > 0 && str[i] != '\0')
 	{
-		ft_putwchar(str[i]);
+		if (ft_wcharlen(str[i]) > len)
+			break ;
+		else
+			ft_putwchar(str[i]);
 		i++;
-		len--;
+		len -= ft_wcharlen(str[i]);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 08:33:38 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/24 09:10:52 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/24 09:23:37 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ int	ft_wstrnlen(wchar_t *str, int n)
 
 	i = 0;
 	len = 0;
-	while (str[i] != '\0' && n > 0)
+	while (str[i] != '\0')
 	{
-		len += ft_wcharlen(str[i]);
+		if ((len + ft_wcharlen(str[i])) > n)
+			break ;
+		else
+			len += ft_wcharlen(str[i]);
 		i++;
-		n--;
 	}
 	return (len);
 }
