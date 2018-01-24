@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 06:55:37 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/24 13:25:09 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/24 15:25:04 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ int		print_unicode_char(int char_written, t_format format, wchar_t c)
 		ft_putchar('\0');
 		char_written += 0;
 	}
-	if (c == 0 || (c >= 55296 && c < 57344))
-		return (1);
+	if ((c >= 55296 && c < 57344) || c < 0)
+		return (-1);
 	char_written += print_width(format, char_written);
 	char_written += print_zero_padding(format, char_written);
 	char_written += ft_putwchar(c);
