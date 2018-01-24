@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 09:11:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/24 08:43:07 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/24 09:10:00 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ int		main(void)
 	ft_putnbrendl(ft_printf("%.4S\n", L"我是一只猫。"));
 	ft_putendl("vraie printf : ");
 	ft_putnbrendl(printf("%.4S\n", L"我是一只猫。"));
-	ft_putendl("\n\nprintf(\"%C\\n\", L'米')");
+	ft_putendl("\n\nprintf(\"%4.15S\\n\", L\"我是一只猫。\")");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%C\n", L'米'));
+	ft_putnbrendl(ft_printf("%4.15S\n", L"我是一只猫。"));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%C\n", L'米'));
+	ft_putnbrendl(printf("%4.15S\n", L"我是一只猫。"));
 }

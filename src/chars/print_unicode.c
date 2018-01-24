@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 06:55:37 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/24 08:46:44 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/24 09:10:58 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,22 +54,18 @@ int		print_unicode_string(int char_written, t_format format, wchar_t *s)
 	int		len;
 
 	prec = format.precision;
-	len = ft_wstrlen(s);
-	if (!s)
+	if (s == NULL)
 	{
 		ft_putstr("(null)");
 		return (6);
 	}
-	if (prec == 0 && len > 0)
-		char_written += (int)len;
-	else if (prec > 0 && prec < (int)len && len > 0)
-		char_written += prec;
-	else if (prec > 0 && len > 0)
+	len = ft_wstrlen(s);
+	if (prec == 0)
 		char_written += len;
+	else if (prec > 0)
+		char_written += ft_wstrnlen(s, prec);
 	char_written += print_width(format, char_written);
 	char_written += print_zero_padding(format, char_written);
-	ft_putstr("len : ");
-	ft_putnbrendl(ft_wstrnlen(s, prec));
 	if (prec > 0)
 		ft_putnwstr(s, ft_wstrnlen(s, prec));
 	else if (prec != -1)
