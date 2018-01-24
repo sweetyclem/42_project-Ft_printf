@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 16:18:19 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/24 12:15:04 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/24 14:53:13 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static char	**encode(char *bin, char *m)
 int			ft_putwchar(wchar_t c)
 {
 	char	*bin;
-	char	**mask;
+	char	**bytes;
 	int		i;
 
 	i = 0;
@@ -51,25 +51,25 @@ int			ft_putwchar(wchar_t c)
 	if (c < 0 || (c >= 55296 && c < 57344))
 		return (i);
 	if ((c <= 127 && MB_CUR_MAX >= 1) || (c <= 255 && MB_CUR_MAX == 1))
-		mask = encode(bin, "0xxxxxxx");
+		bytes = encode(bin, "0xxxxxxx");
 	else if (c <= 2047 && MB_CUR_MAX >= 2)
-		mask = encode(bin, "110xxxxx 10xxxxxx");
+		bytes = encode(bin, "110xxxxx 10xxxxxx");
 	else if (c <= 65535 && MB_CUR_MAX >= 3)
-		mask = encode(bin, "1110xxxx 10xxxxxx 10xxxxxx");
+		bytes = encode(bin, "1110xxxx 10xxxxxx 10xxxxxx");
 	else if (c <= 1114111 && MB_CUR_MAX >= 4)
-		mask = encode(bin, "11110xxx 10xxxxxx 10xxxxxx 10xxxxxx");
+		bytes = encode(bin, "11110xxx 10xxxxxx 10xxxxxx 10xxxxxx");
 	else
 	{
 		ft_strdel(&bin);
 		return (-1);
 	}
 	ft_strdel(&bin);
-	while (mask[i])
+	while (bytes[i])
 	{
-		ft_putchar(ft_atoi_base(mask[i], 2));
-		ft_strdel(&mask[i]);
+		ft_putchar(ft_atoi_base(bytes[i], 2));
+		ft_strdel(&bytes[i]);
 		i++;
 	}
-	free(mask);
+	free(bytes);
 	return (i);
 }
