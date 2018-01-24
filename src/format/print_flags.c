@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 13:10:42 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/24 10:26:41 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/24 11:24:04 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	print_space(t_format format, int nb)
 {
-	if (format.space && ft_strchr("diDu", format.conversion))
+	if (format.space && ft_strchr("diD", format.conversion))
 	{
 		if (nb >= 0)
 		{
