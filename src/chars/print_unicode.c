@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 06:55:37 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/24 09:25:47 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/24 13:25:09 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,11 @@ int		print_unicode_char(int char_written, t_format format, wchar_t c)
 	int		prec;
 
 	prec = format.precision;
-	if (ft_wcharlen(c) == 0)
+	if (c == 0)
+	{
+		ft_putchar('\0');
 		char_written += 0;
+	}
 	if (c == 0 || (c >= 55296 && c < 57344))
 		return (1);
 	char_written += print_width(format, char_written);

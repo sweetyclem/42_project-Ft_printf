@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:19:13 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/22 06:57:51 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/24 12:08:50 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	parse_format(va_list *va, char *str)
 	{
 		if (*str == '%')
 			char_written += parse_args(va, &str);
-		else
+		else if (char_written != -1)
 		{
 			ft_putchar(*str);
 			char_written++;
