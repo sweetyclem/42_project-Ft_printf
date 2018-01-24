@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 16:18:19 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/24 14:53:13 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/24 16:22:46 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ static char	**encode(char *bin, char *m)
 	char	*mask;
 	char	**split;
 
-	mask = ft_strdup(m);
+	if (!(mask = ft_strdup(m)))
+		return (NULL);
 	i = ft_strlen(mask) - 1;
 	j = ft_strlen(bin) - 1;
 	while (i >= 0 && j >= 0)
@@ -40,16 +41,12 @@ static char	**encode(char *bin, char *m)
 	return (split);
 }
 
-int			ft_putwchar(wchar_t c)
+static char	**get_bytes(wchar_t c)
 {
 	char	*bin;
 	char	**bytes;
-	int		i;
 
-	i = 0;
 	bin = ft_itoa_longlong_base((int)c, 2);
-	if (c < 0 || (c >= 55296 && c < 57344))
-		return (i);
 	if ((c <= 127 && MB_CUR_MAX >= 1) || (c <= 255 && MB_CUR_MAX == 1))
 		bytes = encode(bin, "0xxxxxxx");
 	else if (c <= 2047 && MB_CUR_MAX >= 2)
@@ -59,17 +56,25 @@ int			ft_putwchar(wchar_t c)
 	else if (c <= 1114111 && MB_CUR_MAX >= 4)
 		bytes = encode(bin, "11110xxx 10xxxxxx 10xxxxxx 10xxxxxx");
 	else
-	{
-		ft_strdel(&bin);
+		bytes = NULL;
+	ft_memdel((void **)&bin);
+	return (bytes);
+}
+
+int			ft_putwchar(wchar_t c)
+{
+	char	**bytes;
+	int		i;
+
+	i = 0;
+	if (!(bytes = get_bytes(c)))
 		return (-1);
-	}
-	ft_strdel(&bin);
 	while (bytes[i])
 	{
 		ft_putchar(ft_atoi_base(bytes[i], 2));
-		ft_strdel(&bytes[i]);
+		ft_memdel((void **)&bytes[i]);
 		i++;
 	}
-	free(bytes);
+	ft_memdel((void **)&bytes);
 	return (i);
 }

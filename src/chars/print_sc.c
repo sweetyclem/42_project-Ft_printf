@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 07:23:25 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/22 07:33:08 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/24 15:43:20 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ int		print_string(int char_written, t_format format, char *str)
 	{
 		if (prec == 0 && ft_strlen(str) > 0)
 			char_written += (int)ft_strlen(str);
-		else if (prec > 0 && prec < (int)ft_strlen(str) && ft_strlen(str) > 0)
+		else if (str && prec > 0 && prec < (int)ft_strlen(str))
 			char_written += prec;
-		else if (prec > 0 && ft_strlen(str) > 0)
+		else if (str && prec > 0)
 			char_written += (int)ft_strlen(str);
 		char_written += print_width(format, char_written);
 		char_written += print_zero_padding(format, char_written);

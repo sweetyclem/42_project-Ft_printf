@@ -6,7 +6,7 @@
 #    By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/18 13:19:02 by cpirlot           #+#    #+#              #
-#    Updated: 2018/01/24 08:35:25 by cpirlot          ###   ########.fr        #
+#    Updated: 2018/01/24 15:11:20 by cpirlot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,7 @@ $(NAME): $(OBJ)
 $(OBJDIR)/%.o: %.c
 	@mkdir -p obj
 	@printf "%-60b\r" "$(ECHO) $(_CYAN) Compiling $@ $(_END)"
-	@$(CC) $(FLAGS) -c $< -o $@
+	@$(CC) $(FLAGS) -c $< -o $@ -g
 
 dev: $(NAME)
 	gcc -I include -o a.out main.c -g -L. -lftprintf

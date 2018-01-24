@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 09:11:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/24 13:19:58 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/24 15:45:19 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,9 @@ void	print_binary(int n)
 int		main(void)
 {
 	setlocale(LC_ALL, "");
-	ft_putendl("printf(\"{% C}\\n\", 0)");
+	ft_putendl("printf(\"%--2.4s!\\n\", NULL");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("{% C}\n", 0));
+	ft_putnbrendl(ft_printf("%--2.4s!\n", NULL));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("{% C}\n", 0));
-	ft_putendl("printf(\"{% c}\\n\", 0)");
-	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("{% c}\n", 0));
-	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("{% c}\n", 0));
-	ft_putendl("\n\nprintf(\"%hhC, %hhC\\n\", 0, L'米')");
-	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%hhC, %hhC\n", 0, L'米'));
-	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%hhC, %hhC\n", 0, L'米'));
+	ft_putnbrendl(printf("%--2.4s!\n", NULL));
 }
