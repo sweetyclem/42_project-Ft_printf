@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_wstrnlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 09:15:04 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/08 09:15:15 by cpirlot          ###   ########.fr       */
+/*   Created: 2018/01/24 08:33:38 by cpirlot           #+#    #+#             */
+/*   Updated: 2018/01/24 08:45:09 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_wstrnlen(wchar_t *str, int n)
 {
-	size_t	i;
+	int	i;
+	int	len;
 
 	i = 0;
-	while (str[i] != '\0')
+	len = 0;
+	while (str[i] != '\0' && n > 0)
 	{
+		if (str[i] <= 127)
+			len += 1;
+		else if (str[i] <= 2047)
+			len += 2;
+		else if (str[i] <= 65535)
+			len += 3;
+		else
+			len += 4;
 		i++;
+		n--;
 	}
-	return (i);
+	return (len - 2);
 }

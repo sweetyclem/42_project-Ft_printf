@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 09:11:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/23 11:39:08 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/24 08:43:07 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,14 @@ void	print_binary(int n)
 int		main(void)
 {
 	setlocale(LC_ALL, "");
-	ft_putendl("printf(\"%C\\n\", 0)");
+	ft_putendl("printf(\"%.4S\\n\", L\"我是一只猫。\")");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%C\n", 0));
+	ft_putnbrendl(ft_printf("%.4S\n", L"我是一只猫。"));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%C\n", 0));
-	ft_putendl("\n\nprintf(\"%lc\\n\", 0x02af)");
-	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%lc\n", 0x02af));
-	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%lc\n", 0x02af));
+	ft_putnbrendl(printf("%.4S\n", L"我是一只猫。"));
 	ft_putendl("\n\nprintf(\"%C\\n\", L'米')");
 	ft_putendl("mienne : ");
 	ft_putnbrendl(ft_printf("%C\n", L'米'));
 	ft_putendl("vraie printf : ");
 	ft_putnbrendl(printf("%C\n", L'米'));
-	ft_putendl("\n\nprintf(\"%lc\\n\", L'요')");
-	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%lc\n", L'요'));
-	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%lc\n", L'요'));
 }

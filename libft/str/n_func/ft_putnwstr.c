@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ptr_len_base.c                                  :+:      :+:    :+:   */
+/*   ft_putnwstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/10 09:54:41 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/10 09:56:15 by cpirlot          ###   ########.fr       */
+/*   Created: 2018/01/24 08:20:45 by cpirlot           #+#    #+#             */
+/*   Updated: 2018/01/24 08:28:34 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
-size_t	ft_ptr_len_base(size_t ptr, unsigned int base)
+void	ft_putnwstr(wchar_t *str, int len)
 {
-	size_t	len;
+	int i;
 
-	len = 1;
-	while (ptr >= base)
+	i = 0;
+	while (len > 0 && str[i] != '\0')
 	{
-		ptr /= base;
-		len++;
+		ft_putwchar(str[i]);
+		i++;
+		len--;
 	}
-	return (len);
 }

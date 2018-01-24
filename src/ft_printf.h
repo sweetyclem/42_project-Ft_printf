@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 13:24:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/22 11:19:51 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/24 07:57:07 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,5 @@ int			print_ptr(int char_written, va_list *va, t_format format);
 int			print_plain_char(int char_written, t_format format);
 int			print_unicode(va_list *va, t_format format);
 int			print_unicode_char(int char_written, t_format format, wchar_t c);
+int			print_unicode_string(int char_written, t_format format, wchar_t *s);
 #endif

@@ -25,7 +25,8 @@ SRC	= ft_atoi.c ft_bzero.c ft_isalpha.c ft_isalnum.c ft_isascii.c ft_isdigit.c f
 	ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c ft_lstnew.c ft_skip_whitespace.c ft_abs.c \
 	ft_longlong_len.c ft_putnstr.c ft_put_longlong_base.c ft_put_u_longlong_base.c ft_itoa_longlong_base.c \
 	ft_putnchar.c ft_print_hex.c ft_print_ptr.c ft_print_u_hex.c ft_hex_len.c ft_ptr_len_base.c ft_putwchar.c \
-	ft_u_longlong_len.c ft_len_base.c ft_u_len_base.c ft_strndup.c ft_str_multi_chr.c ft_wcharlen.c
+	ft_u_longlong_len.c ft_len_base.c ft_u_len_base.c ft_strndup.c ft_str_multi_chr.c ft_wcharlen.c ft_putwstr.c \
+	ft_wstrlen.c ft_putnwstr.c ft_wstrnlen.c
 OBJDIR = obj
 OBJ	= $(addprefix $(OBJDIR)/,$(SRC:.c=.o))
 VPATH:=char/:${VPATH}
@@ -38,6 +39,7 @@ VPATH:=nbr/len/:${VPATH}
 VPATH:=str/:${VPATH}
 VPATH:=str/print/:${VPATH}
 VPATH:=str/n_func/:${VPATH}
+VPATH:=str/len/:${VPATH}
 
 # PROGRESS BAR
 T = $(words $(OBJ))

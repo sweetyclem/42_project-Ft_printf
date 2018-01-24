@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 09:47:49 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/22 16:44:01 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/24 08:41:18 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,10 @@ char			*ft_strrev(char *str);
 const char		*ft_skip_whitespace(const char *str);
 void			ft_print_ptr(size_t nb);
 size_t			ft_ptr_len_base(size_t ptr, unsigned int base);
+void			ft_putwstr(wchar_t *str);
+void			ft_putnwstr(wchar_t *str, int n);
+int				ft_wstrlen(wchar_t *str);
+int				ft_wstrnlen(wchar_t *str, int len);
 
 /*
 ** Hex
