@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 09:11:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/24 15:45:19 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/24 17:13:51 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,14 @@ void	print_binary(int n)
 int		main(void)
 {
 	setlocale(LC_ALL, "");
-	ft_putendl("printf(\"%--2.4s!\\n\", NULL");
+	ft_putendl("printf(\"%lc\\n\", 254");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%--2.4s!\n", NULL));
+	ft_putnbrendl(ft_printf("%lc\n", 254));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%--2.4s!\n", NULL));
+	ft_putnbrendl(printf("%lc\n", 254));
+	ft_putendl("\n\nprintf(\"%5C\\n\", 350");
+	ft_putendl("mienne : ");
+	ft_putnbrendl(ft_printf("%5C\n", 350));
+	ft_putendl("vraie printf : ");
+	ft_putnbrendl(printf("%5C\n", 350));
 }
