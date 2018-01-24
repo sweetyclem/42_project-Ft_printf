@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 09:11:23 by cpirlot           #+#    #+#             */
-/*   Updated: 2018/01/24 17:13:51 by cpirlot          ###   ########.fr       */
+/*   Updated: 2018/01/24 17:32:44 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ int		main(void)
 	ft_putnbrendl(ft_printf("%lc\n", 254));
 	ft_putendl("vraie printf : ");
 	ft_putnbrendl(printf("%lc\n", 254));
-	ft_putendl("\n\nprintf(\"%5C\\n\", 350");
+	ft_putendl("\n\nprintf(\"%S\\n\", (wchar_t *)'a')");
 	ft_putendl("mienne : ");
-	ft_putnbrendl(ft_printf("%5C\n", 350));
+	ft_putnbrendl(ft_printf("%S\n", (wchar_t *)'a'));
 	ft_putendl("vraie printf : ");
-	ft_putnbrendl(printf("%5C\n", 350));
+	ft_putnbrendl(printf("%S\n", (wchar_t *)'a'));
 }
