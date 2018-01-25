@@ -89,6 +89,9 @@ fclean: clean
 	@make fclean -C libft
 	@echo "fclean printf: $(_CYAN)done$(_END)"
 
-re: fclean all
+re:
+	@make fclean
+	@make
+	
 
 .PHONY: all clean fclean re
