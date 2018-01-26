@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 #include <limits.h>
 
 int	ft_hex_len(unsigned long long int nb)

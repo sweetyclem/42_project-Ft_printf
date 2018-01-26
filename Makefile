@@ -14,7 +14,6 @@ NAME	=  libftprintf.a
 
 CC			= gcc
 FLAGS		= -Wall -Werror -Wextra
-INCLUDES	= ft_printf.h struct.h libft/libft.h
 SRC			= ft_atoi.c ft_bzero.c ft_isalpha.c ft_isalnum.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memalloc.c \
 			ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memdel.c ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar.c \
 			ft_putchar_fd.c ft_putendl.c ft_putendl_fd.c ft_putnbr.c ft_putnbr_fd.c ft_putstr.c ft_putstr_fd.c \
@@ -32,6 +31,7 @@ SRC			= ft_atoi.c ft_bzero.c ft_isalpha.c ft_isalnum.c ft_isascii.c ft_isdigit.c
 			print_o.c get_length.c print_u.c print_x.c print_unicode.c
 OBJDIR		= obj
 OBJ	= $(addprefix $(OBJDIR)/,$(SRC:.c=.o))
+VPATH:=libft/:${VPATH}
 VPATH:=libft/char/:${VPATH}
 VPATH:=libft/hex/:${VPATH}
 VPATH:=libft/lst/:${VPATH}
@@ -43,6 +43,7 @@ VPATH:=libft/str/:${VPATH}
 VPATH:=libft/str/print/:${VPATH}
 VPATH:=libft/str/n_func/:${VPATH}
 VPATH:=libft/str/len/:${VPATH}
+VPATH:=includes/:${VPATH}
 VPATH:=src/:${VPATH}
 VPATH:=src/format:${VPATH}
 VPATH:=src/numbers:${VPATH}
@@ -74,10 +75,10 @@ $(NAME): $(OBJ)
 $(OBJDIR)/%.o: %.c
 	@mkdir -p obj
 	@printf "%-60b\r" "$(ECHO) $(_CYAN) Compiling $@ $(_END)"
-	@$(CC) $(FLAGS) -c $< -o $@ -g
+	@$(CC) $(FLAGS) -c $< -o $@ -I includes/ -I libft/includes/
 
 dev: $(NAME)
-	gcc -I include -o a.out main.c -g -L. -lftprintf
+	gcc -o a.out -I includes/ -I libft/includes/ main.c -L. -lftprintf
 
 clean:
 	@$(RM) -rf $(OBJDIR)
